@@ -4,5 +4,13 @@
   "description": "@gifduck client app",
   "author": "Tomasz Mittlener",
   "license": "ISC",
-  "main": "dist/index.js"
+  "main": "dist/index.js",
+  "scripts": {
+    "check-linter": "eslint . --ext .js,.jsx,.ts,.tsx,.json",
+    "check-types": "tsc -p . --noEmit",
+    "check-pkg": "yarn check-types && yarn linter"
+  },
+  "dependencies": {
+    "@gifduck/common-config": "1.0.0"
+  }
 }
