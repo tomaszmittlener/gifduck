@@ -8,6 +8,7 @@
   "scripts": {
     "check-linter": "eslint . --ext .js,.jsx,.ts,.tsx,.json",
     "check-types": "tsc -p . --noEmit",
+    "check-pkg": "yarn check-types && yarn check-linter",
     "dev": "tsnd --inspect=5858 -r tsconfig-paths/register ./src/index.ts",
     "build": "webpack --config config/webpack.prod.ts"
   },
