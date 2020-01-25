@@ -8,9 +8,18 @@
   "scripts": {
     "check-linter": "eslint . --ext .js,.jsx,.ts,.tsx,.json",
     "check-types": "tsc -p . --noEmit",
-    "check-pkg": "yarn check-types && yarn linter"
+    "check-pkg": "yarn check-types && yarn check-linter",
+    "dev": "webpack-dev-server --config config/webpack.dev.ts",
+    "build": "webpack --config config/webpack.prod.ts"
   },
   "dependencies": {
-    "@gifduck/common-config": "1.0.0"
+    "@babel/runtime": "7.8.3",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "@gifduck/common-config": "1.0.0",
+    "@types/react": "16.9.17",
+    "@types/react-dom": "16.9.4"
   }
 }

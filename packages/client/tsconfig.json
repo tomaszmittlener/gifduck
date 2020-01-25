@@ -1,6 +1,8 @@
 {
   "extends": "@gifduck/common-config/base.tsconfig.json",
   "compilerOptions": {
+    "lib": ["es5", "es6", "dom"],
+    "jsx": "react",
     "outDir": "dist",
     "module": "commonjs",
     "baseUrl": "src",
