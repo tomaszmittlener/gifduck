@@ -1,0 +1,8 @@
+{
+  "name": "@gifduck/common-types",
+  "version": "1.0.0",
+  "description": "@gifduck types repository",
+  "author": "Tomasz Mittlener",
+  "license": "ISC",
+  "main": "dist/index.js"
+}

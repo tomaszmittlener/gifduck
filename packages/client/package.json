@@ -1,0 +1,8 @@
+{
+  "name": "@gifduck/client",
+  "version": "1.0.0",
+  "description": "@gifduck client app",
+  "author": "Tomasz Mittlener",
+  "license": "ISC",
+  "main": "dist/index.js"
+}

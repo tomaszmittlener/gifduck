@@ -1,0 +1,8 @@
+{
+  "name": "@gifduck/common-config",
+  "version": "1.0.0",
+  "description": "@gifduck config files",
+  "author": "Tomasz Mittlener",
+  "license": "ISC",
+  "main": "dist/index.js"
+}
