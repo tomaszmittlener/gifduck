@@ -5,6 +5,20 @@
   "description": "@gifduck project",
   "license": "ISC",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaszmittlener/gifduck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomaszmittlener/gifduck/issues"
+  },
+  "homepage": "https://github.com/tomaszmittlener/gifduck#readme",
+  "keywords": [
+    "react",
+    "express",
+    "monorepo",
+    "gifs"
+  ],
   "workspaces": [
     "packages/client",
     "packages/server",
