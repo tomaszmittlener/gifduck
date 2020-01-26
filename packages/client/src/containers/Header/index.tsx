@@ -2,6 +2,11 @@ import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import Logo from 'components/Logo'
 
+interface HeaderProps {
+  className?: string
+  testId?: string
+}
+
 const Container = styled.header`
   ${({ theme }) => theme.grid.container()};
   position: sticky;
@@ -47,9 +52,9 @@ const StyledLogo = styled(Logo)`
   }
 `
 
-const Header: FunctionComponent = () => {
+const Header: FunctionComponent<HeaderProps> = ({ className, testId }) => {
   return (
-    <Container>
+    <Container data-testid={testId} className={className}>
       <StyledLogo />
       <SearchForm>
         <SearchInput />

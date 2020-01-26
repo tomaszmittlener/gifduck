@@ -1,6 +1,11 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
 
+interface SearchResultsProps {
+  className?: string
+  testId?: string
+}
+
 const Container = styled.section`
   ${({ theme }) => theme.grid.container()};
   background-color: ${({ theme }) => theme.colors.grays.black};
@@ -14,9 +19,9 @@ const Content = styled.div`
   background-color: ${({ theme }) => theme.colors.grays.default};
 `
 
-const SearchResults: FunctionComponent = () => {
+const SearchResults: FunctionComponent<SearchResultsProps> = ({ className, testId }) => {
   return (
-    <Container>
+    <Container data-testid={testId} className={className}>
       <Content />
     </Container>
   )

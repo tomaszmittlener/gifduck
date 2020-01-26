@@ -3,6 +3,11 @@ import styled from 'styled-components'
 import Header from 'containers/Header'
 import SearchResults from 'containers/SearchResults'
 
+interface HomePageProps {
+  className?: string
+  testId?: string
+}
+
 const PageWrapper = styled.main`
   min-height: 100vh;
   display: flex;
@@ -11,9 +16,9 @@ const PageWrapper = styled.main`
   background-color: ${({ theme }) => theme.colors.grays.black};
 `
 
-const HomePage: FunctionComponent = () => {
+const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
   return (
-    <PageWrapper>
+    <PageWrapper data-testid={testId} className={className}>
       <Header />
       <SearchResults />
     </PageWrapper>

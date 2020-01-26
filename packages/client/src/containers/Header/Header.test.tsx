@@ -3,27 +3,32 @@ import { render, cleanup } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'styles/theme'
 
-import Text from './'
+import Header from './'
+
+const defaultProps = {
+  className: 'class-name',
+  testId: 'test-id',
+}
 
 afterEach(cleanup)
 
-describe('Text', () => {
-  test('renders correctly with red color', async () => {
+describe('Header', () => {
+  test('renders correctly', async () => {
     const { container } = render(
       <ThemeProvider theme={Theme}>
-        <Text value={'hello'} color={'red'} />
+        <Header />
       </ThemeProvider>,
     )
-
     expect(container).toMatchSnapshot()
   })
-  test('renders correctly with blue color', async () => {
-    const { container } = render(
+
+  test('passes className to container', async () => {
+    const { getByTestId } = render(
       <ThemeProvider theme={Theme}>
-        <Text value={'hello'} color={'blue'} />
+        <Header {...defaultProps} />
       </ThemeProvider>,
     )
 
-    expect(container).toMatchSnapshot()
+    expect(getByTestId(defaultProps.testId)).toHaveClass(defaultProps.className)
   })
 })

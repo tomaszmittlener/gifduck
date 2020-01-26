@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 interface LogoProps {
   className?: string
+  testId?: string
 }
 
 const StyledLogo = styled.label`
@@ -13,8 +14,12 @@ const StyledLogo = styled.label`
   width: auto;
 `
 
-const Logo: FunctionComponent<LogoProps> = ({ className }) => {
-  return <StyledLogo className={className}>🐤 gifduck</StyledLogo>
+const Logo: FunctionComponent<LogoProps> = ({ className, testId }) => {
+  return (
+    <StyledLogo data-testid={testId} className={className}>
+      🐤 gifduck
+    </StyledLogo>
+  )
 }
 
 export default Logo

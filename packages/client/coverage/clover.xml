@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1580058873188" clover="3.2.0">
-  <project timestamp="1580058873188" name="All files">
-    <metrics statements="30" coveredstatements="25" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="6" elements="39" coveredelements="33" complexity="0" loc="30" ncloc="30" packages="3" files="3" classes="3"/>
-    <package name="components.App">
-      <metrics statements="18" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="index.tsx" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/client/src/components/App/index.tsx">
-        <metrics statements="18" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="components.Text">
-      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <file name="index.tsx" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/client/src/components/Text/index.tsx">
-        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="styles.theme">
-      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/client/src/styles/theme/index.ts">
-        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1580073554926" clover="3.2.0">
+  <project timestamp="1580073554926" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
   </project>
 </coverage>

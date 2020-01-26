@@ -6,5 +6,7 @@ module.exports = {
   moduleNameMapper: {
     '^styles[/](.*)': '<rootDir>/src/styles/$1',
     '^components[/](.*)': '<rootDir>/src/components/$1',
+    '^pages[/](.*)': '<rootDir>/src/pages/$1',
+    '^containers[/](.*)': '<rootDir>/src/containers/$1',
   },
 }
