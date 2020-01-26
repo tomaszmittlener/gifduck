@@ -1,8 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text renders correctly 1`] = `
+exports[`Text renders correctly with blue color 1`] = `
+.c0 {
+  color: blue;
+  font-weight: bold;
+}
+
 <div>
-  <span>
+  <span
+    class="c0"
+    color="blue"
+  >
+    hello
+  </span>
+</div>
+`;
+
+exports[`Text renders correctly with red color 1`] = `
+.c0 {
+  color: red;
+  font-weight: bold;
+}
+
+<div>
+  <span
+    class="c0"
+    color="red"
+  >
     hello
   </span>
 </div>

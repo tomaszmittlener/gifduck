@@ -1,14 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders correctly 1`] = `
+.c0 {
+  color: red;
+  font-weight: bold;
+}
+
+.c1 {
+  color: blue;
+  font-weight: bold;
+}
+
 <div>
   <div>
-    <span>
+    <span
+      class="c0"
+      color="red"
+    >
       React app with Typescript
     </span>
     <br />
     <br />
-    <span />
+    <span
+      class="c1"
+      color="blue"
+    />
   </div>
 </div>
 `;

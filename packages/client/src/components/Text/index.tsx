@@ -1,11 +1,18 @@
 import React, { FunctionComponent } from 'react'
+import styled from 'styled-components'
 
-export interface TextProps {
+interface TextProps {
   value: string
+  color: string
 }
 
-const Text: FunctionComponent<TextProps> = ({ value }) => {
-  return <span>{value}</span>
+const StyledText = styled.span`
+  color: ${props => props.color};
+  font-weight: bold;
+`
+
+const Text: FunctionComponent<TextProps> = ({ value, color }) => {
+  return <StyledText color={color}>{value}</StyledText>
 }
 
 export default Text

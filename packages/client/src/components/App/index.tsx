@@ -9,8 +9,10 @@ export default function Index() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(API_URL)
-      const { data } = await response
+      const response = await axios.get<{ data: string }>(API_URL)
+      const {
+        data: { data },
+      } = await response
       setData(data)
     } catch (e) {
       throw new Error(e)
@@ -23,10 +25,10 @@ export default function Index() {
 
   return (
     <div>
-      <Text value={'React app with Typescript'} />
+      <Text value={'React app with Typescript'} color={'red'} />
       <br />
       <br />
-      <Text value={data} />
+      <Text value={data} color={'blue'} />
     </div>
   )
 }

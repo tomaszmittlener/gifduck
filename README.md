@@ -80,6 +80,7 @@ packages/
     .prettierrc.js              // prettier (formatter) extended from common-config package
     .babel.config.js            // babel (compiler) extended from common-config package
     .jest.config.js             // jest (testing framework) extended from common-config package
+    .setupTests.js              // jest (testing framework) additional packages setup for all the tests in package
     .eslintignore               // eslint (linter) ignored directories/files
     package.json                // common dev deps and workspace-wide scripts
     .env                        // package specific environment variables, not shared in the repository

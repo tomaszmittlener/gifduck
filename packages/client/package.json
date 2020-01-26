@@ -10,27 +10,31 @@
     "check-linter": "eslint . --ext .js,.jsx,.ts,.tsx,.json",
     "check-types": "tsc -p . --noEmit",
     "check-pkg": "yarn check-types && yarn check-linter",
-    "dev": "webpack-dev-server --config config/webpack.dev.ts",
-    "build": "webpack --config config/webpack.prod.ts"
+    "dev": "NODE_ENV=development webpack-dev-server --config config/webpack.dev.ts",
+    "build": "NODE_ENV=production webpack --config config/webpack.prod.ts"
   },
   "dependencies": {
     "@babel/runtime": "7.8.3",
-    "axios": "^0.19.2",
+    "axios": "0.19.2",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "styled-components": "5.0.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@babel/preset-react": "7.8.3",
     "@gifduck/common-config": "1.0.0",
+    "@testing-library/jest-dom": "5.0.2",
+    "@testing-library/react": "9.4.0",
+    "@types/axios": "0.14.0",
     "@types/html-webpack-plugin": "3.2.1",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
+    "@types/styled-components": "4.4.2",
     "@types/webpack-dev-server": "3.9.0",
+    "babel-plugin-styled-components": "1.10.7",
     "eslint-plugin-react": "7.18.0",
     "html-webpack-plugin": "3.2.0",
-    "webpack-dev-server": "3.10.1",
-    "@testing-library/jest-dom": "5.0.2",
-    "@testing-library/react": "9.4.0"
+    "jest-styled-components": "^7.0.0",
+    "webpack-dev-server": "3.10.1"
   }
 }
