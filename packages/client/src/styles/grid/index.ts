@@ -14,20 +14,17 @@ export const buildSpanGrid: BuildSpanGrid = (startCol = 1, endCol = 12) => {
 
 export const buildContainerGrid: BuildContainerGrid = () => css`
   // PADDING
-  // mobile
   padding: 0 ${({ theme }) => theme.ms(0)};
-  // tablet
-  @media screen and (min-width: 768px) {
+  ${({ theme }) => theme.breakpoints.tablet} {
     padding: 0 ${({ theme }) => theme.ms(3)};
   }
-  // desktop
-  @media (min-width: 1024px) {
+  ${({ theme }) => theme.breakpoints.desktop} {
     padding: 0 ${({ theme }) => theme.ms(6)};
   }
 
   // GUTTERS
   grid-column-gap: ${({ theme }) => theme.ms(-6)};
-  @media screen and (min-width: 768px) {
+  ${({ theme }) => theme.breakpoints.tablet} {
     grid-column-gap: ${({ theme }) => theme.ms(0)};
   }
 

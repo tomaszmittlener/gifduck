@@ -41,7 +41,7 @@ const SearchInput = styled.input`
 const StyledLogo = styled(Logo)`
   ${({ theme }) => theme.grid.span(1, 8)};
   justify-self: center;
-  @media screen and (min-width: 768px) {
+  ${({ theme }) => theme.breakpoints.tablet} {
     justify-self: left;
     ${({ theme }) => theme.grid.span(1, 3)};
   }

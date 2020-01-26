@@ -45,6 +45,10 @@ const index: Readonly<Theme> = {
     middleTop: 1400,
     top: 1500,
   },
+  breakpoints: {
+    tablet: '@media screen and (min-width: 768px)',
+    desktop: '@media screen and (min-width: 1024px)',
+  },
   ms: (step: number) => modularScale(step, '1rem', 'majorSecond'),
 }
 

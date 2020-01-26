@@ -52,6 +52,10 @@ export interface ThemeGrid {
   container: BuildContainerGrid
   span: BuildSpanGrid
 }
+export interface ThemeBreakpoints {
+  tablet: string
+  desktop: string
+}
 
 export interface Theme {
   colors: Readonly<ThemeColors>
@@ -59,6 +63,7 @@ export interface Theme {
   ms: (step: number) => string
   layers: Readonly<ThemeLayers>
   grid: Readonly<ThemeGrid>
+  breakpoints: ThemeBreakpoints
 }
 
 export interface ThemeLayers {
