@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+.c1 {
+  font-size: 2.565784513950348rem;
+  font-family: Pacifico,sans-serif;
+  color: #F2C94C;
+  padding: 1.265625rem 0;
+  width: auto;
+}
+
+.c0 {
+  padding: 0 1rem;
+  grid-column-gap: 0.49327018427257213rem;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  width: 100%;
+  max-width: 1440px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1500;
+  background-color: #343339;
+}
+
+.c3 {
+  grid-column: 1 / 9;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c5 {
+  height: 3.247321025468409rem;
+  width: 3.247321025468409rem;
+  border: none;
+  background-color: #ECE9DE;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c4 {
+  border: none;
+  line-height: 1.75;
+  height: 3.247321025468409rem;
+  color: #5D899E;
+  background-color: #ECE9DE;
+  font-size: 1rem;
+  font-family: Open Sans,sans-serif;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.c2 {
+  grid-column: 1 / 9;
+  justify-self: center;
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    padding: 0 1.423828125rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    padding: 0 2.0272865295410156rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    grid-column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c2 {
+    justify-self: left;
+    grid-column: 1 / 4;
+  }
+}
+
+<div>
+  <header
+    class="c0"
+  >
+    <label
+      class="c1 c2"
+    >
+      🐤 gifduck
+    </label>
+    <form
+      class="c3"
+    >
+      <input
+        class="c4"
+      />
+      <button
+        class="c5"
+      >
+        🔎
+      </button>
+    </form>
+  </header>
+</div>
+`;

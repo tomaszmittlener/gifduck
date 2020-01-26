@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders correctly 1`] = `
+exports[`SearchResults renders correctly 1`] = `
 .c2 {
   font-size: 2.565784513950348rem;
   font-family: Pacifico,sans-serif;

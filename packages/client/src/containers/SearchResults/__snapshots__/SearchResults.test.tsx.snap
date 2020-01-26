@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults renders correctly 1`] = `
+.c1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 0;
+  -webkit-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 0;
+  column-gap: 0;
+}
+
+.c3 {
+  display: block;
+}
+
+.c4 {
+  margin: 0;
+}
+
+.c5 {
+  width: 100%;
+  height: auto;
+}
+
+.c0 {
+  padding: 0 1rem;
+  grid-column-gap: 0.49327018427257213rem;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  width: 100%;
+  max-width: 1440px;
+  background-color: #343339;
+  color: #ECE9DE;
+}
+
+.c2 {
+  grid-column: 1 / 9;
+}
+
+@media screen and (min-width:768px) {
+  .c1 {
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c1 {
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    padding: 0 1.423828125rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .c0 {
+    padding: 0 2.0272865295410156rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    grid-column-gap: 1rem;
+  }
+}
+
+<div>
+  <section
+    class="c0 class-name"
+    data-testid="test-id"
+  >
+    <ul
+      class="c1 c2"
+    >
+      <li
+        class="c3"
+      >
+        <figure
+          class="c4"
+        >
+          <img
+            class="c5"
+            src="preview-url"
+          />
+        </figure>
+      </li>
+    </ul>
+  </section>
+</div>
+`;

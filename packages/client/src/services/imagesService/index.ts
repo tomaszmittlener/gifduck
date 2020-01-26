@@ -12,18 +12,16 @@ export interface ImageData {
   id: string
 }
 
-export type ImagesResponse = {
+export interface ImagesResponse {
   data: ImageData[]
 }
 
-export type SearchQuery = {
+export interface SearchQuery {
   searchText: string
 }
 
-type GetImages = (searchQuery: SearchQuery) => Promise<ImagesResponse>
-
-type ImagesService = {
-  getImages: GetImages
+interface ImagesService {
+  getImages: (searchQuery: SearchQuery) => Promise<ImagesResponse>
 }
 
 const imagesService: ImagesService = {

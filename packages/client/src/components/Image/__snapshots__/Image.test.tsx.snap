@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image renders correctly 1`] = `
+.c0 {
+  margin: 0;
+}
+
+.c1 {
+  width: 100%;
+  height: auto;
+}
+
+<div>
+  <figure
+    class="c0 class-name"
+    data-testid="test-id"
+  >
+    <img
+      class="c1"
+      src="image-url"
+    />
+  </figure>
+</div>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders correctly 1`] = `
+.c0 {
+  font-size: 2.565784513950348rem;
+  font-family: Pacifico,sans-serif;
+  color: #F2C94C;
+  padding: 1.265625rem 0;
+  width: auto;
+}
+
+<div>
+  <label
+    class="c0"
+  >
+    🐤 gifduck
+  </label>
+</div>
+`;

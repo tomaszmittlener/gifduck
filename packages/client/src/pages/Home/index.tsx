@@ -11,6 +11,7 @@ interface HomePageProps {
 
 const PageWrapper = styled.main`
   min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,12 +19,12 @@ const PageWrapper = styled.main`
 `
 
 const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
-  const [images, storeImages] = useState<ImageData[]>([])
+  const [results, storeResults] = useState<ImageData[]>([])
 
   const getData = async () => {
     try {
       const { data } = await imagesService.getImages({ searchText: 'test' })
-      storeImages(data)
+      storeResults(data)
     } catch (e) {
       throw new Error(e)
     }
@@ -33,12 +34,10 @@ const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
     getData()
   }, [])
 
-  console.log(images)
-
   return (
     <PageWrapper data-testid={testId} className={className}>
       <Header />
-      <SearchResults />
+      <SearchResults results={results} />
     </PageWrapper>
   )
 }

@@ -2,39 +2,22 @@ import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'styles/theme'
-import { ImageData } from 'services/imagesService'
 
-import SearchResults from './'
-
-const results: ImageData[] = [
-  {
-    id: '1',
-    image: {
-      height: '100',
-      url: 'image-url',
-      width: '200',
-    },
-    preview: {
-      width: '50',
-      url: 'preview-url',
-      height: '100',
-    },
-  },
-]
+import Image from './'
 
 const defaultProps = {
   className: 'class-name',
   testId: 'test-id',
-  results,
+  src: 'image-url',
 }
 
 afterEach(cleanup)
 
-describe('SearchResults', () => {
+describe('Image', () => {
   test('renders correctly', async () => {
     const { container } = render(
       <ThemeProvider theme={Theme}>
-        <SearchResults {...defaultProps} />
+        <Image {...defaultProps} />
       </ThemeProvider>,
     )
     expect(container).toMatchSnapshot()
@@ -43,7 +26,7 @@ describe('SearchResults', () => {
   test('passes className to container', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={Theme}>
-        <SearchResults {...defaultProps} />
+        <Image {...defaultProps} />
       </ThemeProvider>,
     )
 
