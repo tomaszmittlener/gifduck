@@ -1,30 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import Text from './Text'
+import axios from 'axios'
+import Text from '../Text'
 
 const API_URL = 'http://localhost:4000/api/v1/test'
 
-export default function App() {
+export default function Index() {
   const [data, setData] = useState<string>('')
 
   const getData = async () => {
     try {
-      const response = await fetch(API_URL)
-      const { data } = await response.json()
+      const response = await axios.get(API_URL)
+      const { data } = await response
       setData(data)
     } catch (e) {
       throw new Error(e)
     }
   }
 
-  // let number = 1
-
-  const number = 'test'
-
   useEffect(() => {
     getData()
-
-    console.log(number)
-    // console.log(Test())
   }, [])
 
   return (

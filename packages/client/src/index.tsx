@@ -2,8 +2,8 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import App from 'components/App'
 
-const Index = () => {
+const Root = () => {
   return <App />
 }
 
-ReactDOM.render(<Index />, document.getElementById('root'))
+ReactDOM.render(<Root />, document.getElementById('root'))

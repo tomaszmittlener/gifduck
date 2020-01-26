@@ -6,6 +6,7 @@
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
+    "test": "jest",
     "check-linter": "eslint . --ext .js,.jsx,.ts,.tsx,.json",
     "check-types": "tsc -p . --noEmit",
     "check-pkg": "yarn check-types && yarn check-linter",
@@ -14,10 +15,12 @@
   },
   "dependencies": {
     "@babel/runtime": "7.8.3",
+    "axios": "^0.19.2",
     "react": "16.12.0",
     "react-dom": "16.12.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@babel/preset-react": "7.8.3",
     "@gifduck/common-config": "1.0.0",
     "@types/html-webpack-plugin": "3.2.1",
@@ -26,6 +29,8 @@
     "@types/webpack-dev-server": "3.9.0",
     "eslint-plugin-react": "7.18.0",
     "html-webpack-plugin": "3.2.0",
-    "webpack-dev-server": "3.10.1"
+    "webpack-dev-server": "3.10.1",
+    "@testing-library/jest-dom": "5.0.2",
+    "@testing-library/react": "9.4.0"
   }
 }

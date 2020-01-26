@@ -6,6 +6,7 @@
   "license": "ISC",
   "main": "dist/index.js",
   "scripts": {
+    "test": "jest",
     "check-linter": "eslint . --ext .js,.jsx,.ts,.tsx,.json",
     "check-types": "tsc -p . --noEmit",
     "check-pkg": "yarn check-types && yarn check-linter",

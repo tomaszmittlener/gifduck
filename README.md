@@ -27,6 +27,11 @@ Requirements:
 
 - [TODO]
 
+### Running tests
+
+- run client tests mode: `yarn test:client` or `yarn test:client:w` in watch mode
+- run server tests mode: `yarn test:server` or `yarn test:server:w` in watch mode
+
 ## Setup explained
 
 ### Tooling
@@ -138,6 +143,11 @@ Basic workflow described i goals to be achieved:
   - setup: eslint, priettier, webpack, tsconfig, commits, jest
   - goal: client and server apps work on dev and prod
 
+- [x] [General] setup tests
+
+  - setup jest and coverage report
+  - goal: client and server are able to run tests and generate coverage
+
 - [ ] [FE] setup
 
   - create Client folders structure, layout base, grid, services, routing
@@ -179,3 +189,7 @@ Example Further development features:
 
 - [ ] [FE] Introduce pagination
   - TODO
+
+Things to do:
+
+- [ ] [General] setup jest to run tests for all packages and collect global coverage
