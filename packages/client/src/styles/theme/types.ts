@@ -1,3 +1,5 @@
+import { BuildContainerGrid, BuildSpanGrid } from '../grid'
+
 export interface ThemeColorsPrimary {
   default: string
   defaultInverted: string
@@ -46,11 +48,17 @@ export interface ThemeTypography {
   weights: Readonly<ThemeTypographyWeights>
 }
 
+export interface ThemeGrid {
+  container: BuildContainerGrid
+  span: BuildSpanGrid
+}
+
 export interface Theme {
   colors: Readonly<ThemeColors>
   typography: Readonly<ThemeTypography>
   ms: (step: number) => string
   layers: Readonly<ThemeLayers>
+  grid: Readonly<ThemeGrid>
 }
 
 export interface ThemeLayers {

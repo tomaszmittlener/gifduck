@@ -3,15 +3,16 @@ import styled from 'styled-components'
 import Logo from 'components/Logo'
 
 const Container = styled.header`
+  ${({ theme }) => theme.grid.container()};
   position: sticky;
   top: 0;
-  display: block;
   width: 100%;
   z-index: ${({ theme: { layers } }) => layers.top};
   background-color: ${({ theme }) => theme.colors.grays.black};
 `
 
 const SearchForm = styled.form`
+  ${({ theme }) => theme.grid.span(1, 8)};
   display: flex;
 `
 
@@ -37,10 +38,19 @@ const SearchInput = styled.input`
   width: 100%;
 `
 
+const StyledLogo = styled(Logo)`
+  ${({ theme }) => theme.grid.span(1, 8)};
+  justify-self: center;
+  @media screen and (min-width: 768px) {
+    justify-self: left;
+    ${({ theme }) => theme.grid.span(1, 3)};
+  }
+`
+
 const Header: FunctionComponent = () => {
   return (
     <Container>
-      <Logo />
+      <StyledLogo />
       <SearchForm>
         <SearchInput />
         <SearchButton>🔎</SearchButton>

@@ -1,5 +1,6 @@
 import { modularScale } from 'polished'
 import { Theme } from './types'
+import { buildContainerGrid, buildSpanGrid } from '../grid'
 
 const index: Readonly<Theme> = {
   colors: {
@@ -32,6 +33,10 @@ const index: Readonly<Theme> = {
       regular: 400,
       bold: 700,
     },
+  },
+  grid: {
+    container: buildContainerGrid,
+    span: buildSpanGrid,
   },
   layers: {
     bottom: 1000,
