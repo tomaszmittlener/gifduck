@@ -60,36 +60,42 @@ Requirements:
 ### Basic structure and configurations
 
 ```
-.github                         // CI flow configuration (GitHub Actions)
 packages/
-  some-package/
+  somePackage/
     dist/                       // folder with built app
     config/
-    webpack.dev.ts              // webpack configuration file for development environemnt
-    webpack.prod.ts             // webpack configuration file for production environemnt
+        webpack.dev.ts          // webpack configuration file for development environemnt
+        webpack.prod.ts         // webpack configuration file for production environemnt
+    coverage                    // test coverage files
     src/
+        components/
+            foo/
+                index.ts        // main file
+                foo.test.ts     // test file with jests for index.ts
         index.tsx
-        package.json            // package-specific deps and scripts
-    README.md                   // shown in npmjs.com. included in npm artifact
+    package.json                // package-specific deps and scripts
+    README.md                   // shown in npmjs.com. included in npm artifact [TODO]
     tsconfig.json               // typescript configuration
     .eslintrc                   // eslint (linter) configuration extended from common-config package
-    .prettierrc.js              // prettier (formatter) extended from common-ccommon package
-    .babel.config.js            // babel (compiler) extended from common-common package
-    common/
-        some-common-package/
-        src/
-            index.ts
-            package.json        // package-specific deps and scripts
-
-    .editorconfig               // editorconfig configuration file
+    .prettierrc.js              // prettier (formatter) extended from common-config package
+    .babel.config.js            // babel (compiler) extended from common-config package
+    .jest.config.js             // jest (testing framework) extended from common-config package
     .eslintignore               // eslint (linter) ignored directories/files
-    .eslintrc                   // eslint (linter) configuration
-    .gitignore                  // github's default node gitignore with customizations
-    .prettierrc.js              // prettier (formatter) configuration
-    lerna.json                  // lerna configuration
     package.json                // common dev deps and workspace-wide scripts
-    README.md                   // workspace-wide information. shown in github
-    yarn.lock                   // the only lock file in the repo. all packages combined
+    .env                        // package specific environment variables, not shared in the repository
+    common/                     // keeps independent packages, shared across monorepo
+        some-common-package/    // structure may vary. ie. only config files are exported or can follow usual package schema
+            package.json        // common dev deps and workspace-wide scripts
+.editorconfig                   // editorconfig configuration file
+.eslintignore                   // eslint (linter) ignored directories/files
+.prettierignore                 // prettier (formatter) ignored directories/files
+.eslintrc                       // eslint (linter) configuration
+.gitignore                      // github's default node gitignore with customizations
+.prettierrc.js                  // prettier (formatter) configuration
+lerna.json                      // lerna configuration
+package.json                    // common dev deps and workspace-wide scripts
+README.md                       // workspace-wide information. shown in github
+yarn.lock                       // the only lock file in the repo. all packages combined
 ```
 
 ### Dependency management
@@ -193,3 +199,4 @@ Example Further development features:
 Things to do:
 
 - [ ] [General] setup jest to run tests for all packages and collect global coverage
+- [ ] [General] add Readme for each package
