@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Text from '../Text'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyles from 'styles/GlobalStyles'
+import Theme from 'styles/theme'
 
 const API_URL = 'http://localhost:4000/api/v1/test'
 
@@ -24,11 +27,14 @@ export default function Index() {
   }, [])
 
   return (
-    <div>
-      <Text value={'React app with Typescript'} color={'red'} />
-      <br />
-      <br />
-      <Text value={data} color={'blue'} />
-    </div>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyles />
+      <div>
+        <Text value={'React app with Typescript'} color={'red'} />
+        <br />
+        <br />
+        <Text value={data} color={'blue'} />
+      </div>
+    </ThemeProvider>
   )
 }

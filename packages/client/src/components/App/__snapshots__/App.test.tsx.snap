@@ -3,12 +3,12 @@
 exports[`App renders correctly 1`] = `
 .c0 {
   color: red;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .c1 {
   color: blue;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 <div>

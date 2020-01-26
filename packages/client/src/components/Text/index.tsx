@@ -8,7 +8,7 @@ interface TextProps {
 
 const StyledText = styled.span`
   color: ${props => props.color};
-  font-weight: bold;
+  font-weight: ${props => props.theme.typography.weights.bold};
 `
 
 const Text: FunctionComponent<TextProps> = ({ value, color }) => {

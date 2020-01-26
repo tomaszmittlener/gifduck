@@ -3,7 +3,7 @@
 exports[`Text renders correctly with blue color 1`] = `
 .c0 {
   color: blue;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 <div>
@@ -19,7 +19,7 @@ exports[`Text renders correctly with blue color 1`] = `
 exports[`Text renders correctly with red color 1`] = `
 .c0 {
   color: red;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 <div>
