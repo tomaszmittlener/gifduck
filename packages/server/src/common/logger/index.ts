@@ -1,5 +1,4 @@
 import pino, { LoggerOptions } from 'pino'
-import pinoExpress from 'express-pino-logger'
 
 const getConfig = (): LoggerOptions => {
   const isDev = process.env.NODE_ENV === 'development'
@@ -17,8 +16,5 @@ const getConfig = (): LoggerOptions => {
 }
 
 const logger = pino(getConfig())
-// shared configuration with logger
-const loggerMiddleware = pinoExpress({ logger })
 
-export { loggerMiddleware }
 export default logger

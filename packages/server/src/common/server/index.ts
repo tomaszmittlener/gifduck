@@ -2,7 +2,10 @@ import express, { Application } from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import http from 'http'
-import logger, { loggerMiddleware } from 'common/logger'
+
+import logger from '../logger'
+import loggerMiddleware from 'middleware/loggerMiddleware'
+import installRouter from '../installRouter'
 
 export type Routes = (app: Application) => void
 
@@ -29,13 +32,9 @@ export default class Server {
     logger.info(`>> Running on ${process.env.NODE_ENV} on port: ${port}`)
   }
 
-  installRouter = (): void => {
-    this.routes(app)
-  }
-
   async listen(port: number): Promise<Application> {
     try {
-      this.installRouter()
+      await installRouter(app, this.routes)
       http.createServer(app).listen(port, () => this.welcome(port))
     } catch (e) {
       logger.error(e)
