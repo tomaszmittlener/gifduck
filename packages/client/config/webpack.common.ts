@@ -2,14 +2,15 @@ import path from 'path'
 import { Configuration, ProgressPlugin } from 'webpack'
 import HtmlWebPackPlugin from 'html-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
 
 const SRC_DIR = path.join(__dirname, '../src')
 
 const htmlWebPackPlugin = new HtmlWebPackPlugin({
   template: `${SRC_DIR}/index.html`,
 })
-
 const progressPlugin = new ProgressPlugin()
+const DotEnvPlugin = new Dotenv()
 
 const config: Configuration = {
   entry: {
@@ -39,7 +40,7 @@ const config: Configuration = {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
   },
-  plugins: [htmlWebPackPlugin, progressPlugin],
+  plugins: [DotEnvPlugin, htmlWebPackPlugin, progressPlugin],
 }
 
 export default config
