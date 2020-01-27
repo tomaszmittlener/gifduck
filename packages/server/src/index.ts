@@ -1,4 +1,7 @@
 import 'common/env'
-import startServer from 'common/server'
+import Server from 'common/server'
+import Routes from './routes'
 
-startServer()
+const port = parseInt(process.env.PORT || '')
+
+export default new Server().router(Routes).listen(port)
