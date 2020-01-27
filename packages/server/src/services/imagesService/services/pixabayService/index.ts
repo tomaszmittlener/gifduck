@@ -24,6 +24,8 @@ const getPixabayQuery = (apiKey: string, searchQuery: SearchQuery): PixabaySearc
 const pixabayService: PixabayService = {
   search: searchQuery => {
     const query = getPixabayQuery(PIXABAY_API_KEY, searchQuery)
-    return instance.get(`/gifs/search?${stringify(query)}`)
+    return instance.get(`/?${stringify(query)}`)
   },
 }
+
+export default pixabayService

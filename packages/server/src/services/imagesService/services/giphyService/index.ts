@@ -27,3 +27,5 @@ const giphyService: GiphyService = {
     return instance.get(`/gifs/search?${stringify(query)}`)
   },
 }
+
+export default giphyService
