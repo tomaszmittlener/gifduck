@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.96% </span>
+                <span class="strong">89.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/23</span>
+                <span class='fraction'>25/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.24% </span>
+                <span class="strong">90.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/17</span>
+                <span class='fraction'>20/22</span>
             </div>
         
             
@@ -103,7 +103,17 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -123,12 +133,17 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -137,7 +152,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -151,9 +165,12 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useLocation } from 'react-router-dom'
+&nbsp;
+import { getQuery } from 'utilities/query'
+import imagesService, { ImageData, SearchQuery, SearchQueryKeys } from 'services/imagesService'
 import Header from 'containers/Header'
 import SearchResults from 'containers/SearchResults'
-import imagesService, { ImageData } from 'services/imagesService'
 &nbsp;
 interface HomePageProps {
   className?: string
@@ -171,10 +188,15 @@ const PageWrapper = styled.main`
 &nbsp;
 const HomePage: FunctionComponent&lt;HomePageProps&gt; = ({ className, testId }) =&gt; {
   const [results, storeResults] = useState&lt;ImageData[]&gt;([])
+  const { search } = useLocation()
 &nbsp;
   const getData = async () =&gt; {
     try {
-      const { <span class="cstat-no" title="statement not covered" >data } = a</span>wait imagesService.getImages({ searchText: 'test' })
+      const searchText = getQuery(search)[SearchQueryKeys.searchText]
+      const searchQuery: SearchQuery = {
+        [SearchQueryKeys.searchText]: searchText ? <span class="branch-0 cbranch-no" title="branch not covered" >String(searchText) </span>: '',
+      }
+      const { <span class="cstat-no" title="statement not covered" >data } = a</span>wait imagesService.getImages(searchQuery)
 <span class="cstat-no" title="statement not covered" >      storeResults(data)</span>
     } catch (e) {
 <span class="cstat-no" title="statement not covered" >      throw new Error(e)</span>
@@ -183,13 +205,12 @@ const HomePage: FunctionComponent&lt;HomePageProps&gt; = ({ className, testId })
 &nbsp;
   useEffect(() =&gt; {
     getData()
-  }, [])
-&nbsp;
+  }, [search])
 &nbsp;
   return (
     &lt;PageWrapper data-testid={testId} className={className}&gt;
       &lt;Header /&gt;
-      &lt;SearchResults results={results}/&gt;
+      &lt;SearchResults results={results} /&gt;
     &lt;/PageWrapper&gt;
   )
 }
@@ -202,7 +223,7 @@ export default HomePage
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jan 27 2020 00:36:41 GMT+0100 (GMT+01:00)
+                at Mon Jan 27 2020 13:39:48 GMT+0100 (Central European Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

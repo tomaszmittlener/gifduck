@@ -98,6 +98,9 @@ exports[`Header renders correctly 1`] = `
     >
       <input
         class="c4"
+        name="search"
+        placeholder="Search for Images..."
+        type="text"
       />
       <button
         class="c5"

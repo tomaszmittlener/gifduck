@@ -2,6 +2,7 @@ import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'styles/theme'
+import { MemoryRouter } from 'react-router-dom'
 
 import Header from './'
 
@@ -16,7 +17,9 @@ describe('Header', () => {
   test('renders correctly', async () => {
     const { container } = render(
       <ThemeProvider theme={Theme}>
-        <Header />
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>
       </ThemeProvider>,
     )
     expect(container).toMatchSnapshot()
@@ -25,7 +28,9 @@ describe('Header', () => {
   test('passes className to container', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={Theme}>
-        <Header {...defaultProps} />
+        <MemoryRouter>
+          <Header {...defaultProps} />
+        </MemoryRouter>
       </ThemeProvider>,
     )
 

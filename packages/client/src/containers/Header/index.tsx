@@ -1,6 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState, FormEventHandler, ChangeEventHandler } from 'react'
 import styled from 'styled-components'
+import { useHistory, useLocation } from 'react-router-dom'
+
 import Logo from 'components/Logo'
+import { SearchQueryKeys } from 'services/imagesService'
+import { getQuery, mergeQueries, stringifyQuery } from 'utilities/query'
 
 interface HeaderProps {
   className?: string
@@ -53,11 +57,31 @@ const StyledLogo = styled(Logo)`
 `
 
 const Header: FunctionComponent<HeaderProps> = ({ className, testId }) => {
+  const [searchInput, setSearchInput] = useState<string>('')
+  const history = useHistory()
+  const location = useLocation()
+
+  const updateSearch = () => {
+    const query = getQuery(location.search)
+    const newQuery = mergeQueries(query, { [SearchQueryKeys.searchText]: searchInput })
+    const queryString = stringifyQuery(newQuery)
+    history.replace({ search: queryString })
+  }
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault()
+    updateSearch()
+  }
+
+  const handleInputChange: ChangeEventHandler<HTMLInputElement> = e => {
+    setSearchInput(e.target.value)
+  }
+
   return (
     <Container data-testid={testId} className={className}>
       <StyledLogo />
-      <SearchForm>
-        <SearchInput />
+      <SearchForm onSubmit={handleSubmit}>
+        <SearchInput type="text" name="search" onChange={handleInputChange} placeholder="Search for Images..." />
         <SearchButton>🔎</SearchButton>
       </SearchForm>
     </Container>

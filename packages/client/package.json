@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "@babel/runtime": "7.8.3",
+    "@types/react-router-dom": "5.1.3",
     "axios": "0.19.2",
     "polished": "^3.4.2",
+    "qs": "6.9.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
+    "react-router-dom": "5.1.2",
     "styled-components": "5.0.0"
   },
   "devDependencies": {
@@ -28,6 +31,7 @@
     "@testing-library/react": "9.4.0",
     "@types/axios": "0.14.0",
     "@types/html-webpack-plugin": "3.2.1",
+    "@types/qs": "6.9.0",
     "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "@types/styled-components": "4.4.2",
@@ -35,7 +39,7 @@
     "babel-plugin-styled-components": "1.10.7",
     "eslint-plugin-react": "7.18.0",
     "html-webpack-plugin": "3.2.0",
-    "jest-styled-components": "^7.0.0",
+    "jest-styled-components": "7.0.0",
     "webpack-dev-server": "3.10.1"
   }
 }

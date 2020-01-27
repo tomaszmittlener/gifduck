@@ -9,5 +9,6 @@ module.exports = {
     '^pages[/](.*)': '<rootDir>/src/pages/$1',
     '^containers[/](.*)': '<rootDir>/src/containers/$1',
     '^services[/](.*)': '<rootDir>/src/services/$1',
+    '^utilities[/](.*)': '<rootDir>/src/utilities/$1',
   },
 }

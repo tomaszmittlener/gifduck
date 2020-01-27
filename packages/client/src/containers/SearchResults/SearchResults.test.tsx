@@ -3,6 +3,7 @@ import { render, cleanup } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'styles/theme'
 import { ImageData } from 'services/imagesService'
+import { MemoryRouter } from 'react-router-dom'
 
 import SearchResults from './'
 
@@ -34,7 +35,9 @@ describe('SearchResults', () => {
   test('renders correctly', async () => {
     const { container } = render(
       <ThemeProvider theme={Theme}>
-        <SearchResults {...defaultProps} />
+        <MemoryRouter>
+          <SearchResults {...defaultProps} />
+        </MemoryRouter>
       </ThemeProvider>,
     )
     expect(container).toMatchSnapshot()
@@ -43,7 +46,9 @@ describe('SearchResults', () => {
   test('passes className to container', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={Theme}>
-        <SearchResults {...defaultProps} />
+        <MemoryRouter>
+          <SearchResults {...defaultProps} />
+        </MemoryRouter>
       </ThemeProvider>,
     )
 

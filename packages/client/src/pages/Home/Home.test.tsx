@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import Theme from 'styles/theme'
 
 import Home from './'
+import { MemoryRouter } from 'react-router-dom'
 
 const defaultProps = {
   className: 'class-name',
@@ -16,7 +17,9 @@ describe('SearchResults', () => {
   test('renders correctly', async () => {
     const { container } = render(
       <ThemeProvider theme={Theme}>
-        <Home />
+        <MemoryRouter>
+          <Home />
+        </MemoryRouter>
       </ThemeProvider>,
     )
     expect(container).toMatchSnapshot()
@@ -25,7 +28,9 @@ describe('SearchResults', () => {
   test('passes className to container', async () => {
     const { getByTestId } = render(
       <ThemeProvider theme={Theme}>
-        <Home {...defaultProps} />
+        <MemoryRouter>
+          <Home {...defaultProps} />
+        </MemoryRouter>
       </ThemeProvider>,
     )
 

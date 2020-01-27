@@ -16,8 +16,12 @@ export interface ImagesResponse {
   data: ImageData[]
 }
 
+export enum SearchQueryKeys {
+  searchText = 'q',
+}
+
 export interface SearchQuery {
-  searchText: string
+  [SearchQueryKeys.searchText]: string
 }
 
 interface ImagesService {
@@ -25,12 +29,14 @@ interface ImagesService {
 }
 
 const imagesService: ImagesService = {
-  getImages: async () =>
-    new Promise(resolve => {
+  getImages: async (query: SearchQuery) => {
+    console.log(query)
+    return new Promise(resolve => {
       setTimeout(() => {
         resolve(mockImages)
       }, 200)
-    }),
+    })
+  },
 }
 
 export default imagesService

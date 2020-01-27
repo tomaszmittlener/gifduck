@@ -1,8 +1,11 @@
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useLocation } from 'react-router-dom'
+
+import { getQuery } from 'utilities/query'
+import imagesService, { ImageData, SearchQuery, SearchQueryKeys } from 'services/imagesService'
 import Header from 'containers/Header'
 import SearchResults from 'containers/SearchResults'
-import imagesService, { ImageData } from 'services/imagesService'
 
 interface HomePageProps {
   className?: string
@@ -20,10 +23,15 @@ const PageWrapper = styled.main`
 
 const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
   const [results, storeResults] = useState<ImageData[]>([])
+  const { search } = useLocation()
 
   const getData = async () => {
     try {
-      const { data } = await imagesService.getImages({ searchText: 'test' })
+      const searchText = getQuery(search)[SearchQueryKeys.searchText]
+      const searchQuery: SearchQuery = {
+        [SearchQueryKeys.searchText]: searchText ? String(searchText) : '',
+      }
+      const { data } = await imagesService.getImages(searchQuery)
       storeResults(data)
     } catch (e) {
       throw new Error(e)
@@ -32,7 +40,7 @@ const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
 
   useEffect(() => {
     getData()
-  }, [])
+  }, [search])
 
   return (
     <PageWrapper data-testid={testId} className={className}>

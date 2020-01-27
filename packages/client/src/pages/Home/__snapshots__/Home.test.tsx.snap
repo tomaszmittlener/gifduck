@@ -176,6 +176,9 @@ exports[`SearchResults renders correctly 1`] = `
       >
         <input
           class="c5"
+          name="search"
+          placeholder="Search for Images..."
+          type="text"
         />
         <button
           class="c6"
