@@ -19,14 +19,19 @@
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "dotenv": "8.2.0",
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "express-pino-logger": "4.0.0",
+    "pino": "^5.16.0"
   },
   "devDependencies": {
     "@gifduck/common-config": "1.0.0",
     "@types/body-parser": "1.17.1",
     "@types/cors": "2.8.6",
     "@types/express": "4.17.2",
+    "@types/express-pino-logger": "4.0.2",
+    "@types/pino": "5.15.3",
     "@types/webpack-node-externals": "1.7.0",
+    "pino-pretty": "3.5.0",
     "webpack-node-externals": "1.7.2"
   }
 }

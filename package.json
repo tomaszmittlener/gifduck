@@ -43,6 +43,7 @@
     "test:server": "lerna exec --scope @gifduck/server yarn test",
     "test:server:w": "yarn test:client -- -- --watch",
     "client:add": "lerna add --scope @gifduck/client",
+    "server:add": "lerna add --scope @gifduck/server",
     "client:check": "lerna add --scope @gifduck/client yarn check-pkg"
   },
   "husky": {
