@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useState, FormEventHandler, ChangeEventHandler } from 'react'
 import styled from 'styled-components'
 import { useHistory, useLocation } from 'react-router-dom'
+import { SearchQueryKeys } from '@gifduck/common-types/imagesService'
 
 import Logo from 'components/Logo'
-import { SearchQueryKeys } from 'services/imagesService'
 import { getQuery, mergeQueries, stringifyQuery } from 'utilities/query'
 
 interface HeaderProps {

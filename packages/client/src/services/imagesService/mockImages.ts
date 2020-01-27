@@ -1,4 +1,4 @@
-import { ImagesResponse } from './index'
+import { ImagesResponse } from '@gifduck/common-types/imagesService'
 
 const mockImages: ImagesResponse = {
   data: [

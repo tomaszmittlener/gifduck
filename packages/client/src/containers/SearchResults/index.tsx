@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { ImageData } from 'services/imagesService'
+import { ImageData } from '@gifduck/common-types/imagesService'
+
 import Gallery from 'components/Gallery'
 import GalleryItem from 'components/GalleryItem'
 import Image from 'components/Image'

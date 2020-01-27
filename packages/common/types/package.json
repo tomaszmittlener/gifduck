@@ -1,8 +1,13 @@
 {
   "name": "@gifduck/common-types",
   "version": "1.0.0",
-  "description": "@gifduck types repository",
+  "description": "@gifduck typescrtipt types repository",
   "author": "Tomasz Mittlener",
   "license": "ISC",
-  "main": "dist/index.js"
+  "devDependencies": {
+    "@gifduck/common-config": "1.0.0"
+  },
+  "files": [
+    "imagesService/index.ts"
+  ]
 }

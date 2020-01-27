@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'styles/theme'
-import { MemoryRouter } from 'react-router-dom'
 
 import Header from './'
 

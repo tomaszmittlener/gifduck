@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
-import Theme from 'styles/theme'
-import { ImageData } from 'services/imagesService'
+import { ImageData } from '@gifduck/common-types/imagesService'
 import { MemoryRouter } from 'react-router-dom'
+import Theme from 'styles/theme'
 
 import SearchResults from './'
 
