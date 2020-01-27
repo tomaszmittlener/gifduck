@@ -10,8 +10,8 @@ export interface ImageData {
   id: string
 }
 
-export interface ImagesResponse {
-  data: ImageData[]
+export interface ImagesSearchResponse {
+  results: ImageData[]
 }
 
 export enum SearchQueryKeys {

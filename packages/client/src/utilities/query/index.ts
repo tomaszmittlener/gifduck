@@ -10,13 +10,13 @@ export const getQuery = (queryString: string): DefaultQuery => {
   })
 }
 
-export const stringifyQuery = (queryString: DefaultQuery): string => {
-  return stringify(queryString, { addQueryPrefix: true })
+export const stringifyQuery = <T = DefaultQuery>(queryObject: T): string => {
+  return stringify(queryObject, { addQueryPrefix: true })
 }
 
-export const mergeQueries = (oldQuery: DefaultQuery, newQuery: DefaultQuery): DefaultQuery => {
+export const mergeQueries = <T = DefaultQuery>(oldQueryObject: T, newQueryObject: T): T => {
   return {
-    ...oldQuery,
-    ...newQuery,
+    ...oldQueryObject,
+    ...newQueryObject,
   }
 }

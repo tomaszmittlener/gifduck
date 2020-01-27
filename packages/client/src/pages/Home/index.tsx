@@ -33,7 +33,7 @@ const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
         [SearchQueryKeys.searchText]: searchText ? String(searchText) : '',
       }
       const { data } = await imagesService.getImages(searchQuery)
-      storeResults(data)
+      storeResults(data.results)
     } catch (e) {
       throw new Error(e)
     }

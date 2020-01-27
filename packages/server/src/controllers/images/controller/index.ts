@@ -1,9 +1,12 @@
 import { NextFunction, Request, Response } from 'express'
-import { SearchQuery, SearchQueryKeys } from '@gifduck/common-types/imagesService'
+import { ImagesSearchResponse, SearchQuery, SearchQueryKeys, ImageData } from '@gifduck/common-types/imagesService'
 import imagesService from 'services/imagesService'
 import { createError } from 'middleware/errorHandlerMiddleware'
 import logger from 'common/logger'
 import { HttpStatusCode } from 'common/types'
+const getSearchResponseBody = (imagesData: ImageData[]): ImagesSearchResponse => ({
+  results: imagesData,
+})
 
 const imagesController = {
   search: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
@@ -11,9 +14,11 @@ const imagesController = {
       const query: SearchQuery = req.query
       if (!!query[SearchQueryKeys.searchText]) {
         const imagesData = await imagesService.search(query)
-        res.json({ data: imagesData })
+        const responseBody = getSearchResponseBody(imagesData)
+        res.json(responseBody)
       } else {
-        res.status(HttpStatusCode.NO_CONTENT).json({ data: [] })
+        const responseBody = getSearchResponseBody([])
+        res.json(responseBody)
       }
     } catch (e) {
       logger.error(e, 'Giphy Controller - Search')
