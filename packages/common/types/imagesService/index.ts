@@ -1,7 +1,8 @@
 export interface ImageObject {
-  height: string
-  width: string
+  height: number
+  width: number
   url: string
+  aspectRatio: number
 }
 
 export interface ImageData {

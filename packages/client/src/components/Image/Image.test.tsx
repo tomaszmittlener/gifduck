@@ -9,6 +9,10 @@ const defaultProps = {
   className: 'class-name',
   testId: 'test-id',
   src: 'image-url',
+  height: 10,
+  width: 20,
+  aspectRatio: 20,
+  preSrc: 'pre-scr',
 }
 
 afterEach(cleanup)

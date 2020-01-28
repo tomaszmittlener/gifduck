@@ -13,9 +13,8 @@ interface SearchResultsProps {
 }
 
 const Container = styled.section`
-  ${({ theme }) => theme.grid.container()};
   background-color: ${({ theme }) => theme.colors.grays.black};
-  color: ${({ theme }) => theme.colors.grays.white};
+  ${({ theme }) => theme.grid.container()};
 `
 
 const StyledGallery = styled(Gallery)`
@@ -28,7 +27,13 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({ className, testI
       <StyledGallery>
         {results.map(result => (
           <GalleryItem key={result.id}>
-            <Image src={result.preview.url} />
+            <Image
+              src={result.image.url}
+              width={result.image.width}
+              height={result.image.height}
+              aspectRatio={result.image.aspectRatio}
+              preSrc={result.preview.url}
+            />
           </GalleryItem>
         ))}
       </StyledGallery>

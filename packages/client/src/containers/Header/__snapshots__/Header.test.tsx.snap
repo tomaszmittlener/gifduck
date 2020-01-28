@@ -22,6 +22,9 @@ exports[`Header renders correctly 1`] = `
   width: 100%;
   z-index: 1500;
   background-color: #343339;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .c3 {

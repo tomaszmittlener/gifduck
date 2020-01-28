@@ -6,16 +6,16 @@ interface GalleryProps {
   testId?: string
 }
 
-const GalleryItem = styled.li`
+const Container = styled.li`
   display: block;
 `
 
-const Gallery: FunctionComponent<GalleryProps> = ({ className, testId, children }) => {
+const GalleryItem: FunctionComponent<GalleryProps> = ({ className, testId, children }) => {
   return (
-    <GalleryItem data-testid={testId} className={className}>
+    <Container data-testid={testId} className={className}>
       {children}
-    </GalleryItem>
+    </Container>
   )
 }
 
-export default Gallery
+export default GalleryItem

@@ -6,6 +6,7 @@ import { SearchQueryKeys, ImageData, SearchQuery } from '@gifduck/common-types/i
 import { getQuery } from 'utilities/query'
 import imagesService from 'services/imagesService'
 import Header from 'containers/Header'
+import Footer from 'containers/Footer'
 import SearchResults from 'containers/SearchResults'
 
 interface HomePageProps {
@@ -13,13 +14,20 @@ interface HomePageProps {
   testId?: string
 }
 
-const PageWrapper = styled.main`
+const PageWrapper = styled.div`
   min-height: 100vh;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: ${({ theme }) => theme.colors.grays.black};
+`
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 50vh;
+  padding: ${({ theme }) => theme.ms(10)} 0;
 `
 
 const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
@@ -46,7 +54,10 @@ const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
   return (
     <PageWrapper data-testid={testId} className={className}>
       <Header />
-      <SearchResults results={results} />
+      <Main>
+        <SearchResults results={results} />
+      </Main>
+      <Footer />
     </PageWrapper>
   )
 }

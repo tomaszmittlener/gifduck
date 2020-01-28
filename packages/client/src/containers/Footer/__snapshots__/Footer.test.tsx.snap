@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+.c0 {
+  margin: auto 0 0 0;
+  width: 100%;
+  min-height: 10.5450938424492rem;
+  background-color: #F2C94C;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.423828125rem 0px;
+}
+
+.c1 {
+  color: #0D2E4D;
+  font-family: Pacifico,sans-serif;
+}
+
+<div>
+  <footer
+    class="c0"
+  >
+    <span
+      class="c1"
+    >
+      @gifduck by Tomasz Mittlener
+    </span>
+  </footer>
+</div>
+`;

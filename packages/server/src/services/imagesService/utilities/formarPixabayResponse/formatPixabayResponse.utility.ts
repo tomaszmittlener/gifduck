@@ -1,5 +1,6 @@
 import { ImageData } from '@gifduck/common-types/imagesService'
 import { PixabayImageResponse } from '../../services/pixabayService/types'
+import getAspectRatio from '../getAspectRatio'
 
 type FormatGiphyResponse = (res: PixabayImageResponse) => ImageData[]
 
@@ -11,14 +12,16 @@ const formatImages = (data: PixabayImageResponse['hits']): ImageData[] =>
     return {
       id: PIXABAY_ID_PREFIX + String(id),
       image: {
-        height: String(webformatHeight),
+        height: webformatHeight,
         url: webformatURL,
-        width: String(webformatWidth),
+        width: webformatWidth,
+        aspectRatio: getAspectRatio(webformatWidth, webformatHeight),
       },
       preview: {
-        width: String(previewWidth),
+        width: previewWidth,
         url: previewURL,
-        height: String(previewHeight),
+        height: previewHeight,
+        aspectRatio: getAspectRatio(previewWidth, previewHeight),
       },
     }
   })

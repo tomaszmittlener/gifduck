@@ -18,6 +18,7 @@ const Container = styled.header`
   width: 100%;
   z-index: ${({ theme: { layers } }) => layers.top};
   background-color: ${({ theme }) => theme.colors.grays.black};
+  align-self: center;
 `
 
 const SearchForm = styled.form`
