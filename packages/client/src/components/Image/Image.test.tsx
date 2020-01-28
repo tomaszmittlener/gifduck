@@ -11,7 +11,7 @@ const defaultProps = {
   src: 'image-url',
   height: 10,
   width: 20,
-  aspectRatio: 20,
+  aspectRatio: 1.22222,
   preSrc: 'pre-scr',
 }
 

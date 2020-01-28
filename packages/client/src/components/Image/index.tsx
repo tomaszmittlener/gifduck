@@ -6,8 +6,8 @@ interface SearchResultsProps {
   className?: string
   testId?: string
   src: string
-  height: number
-  width: number
+  height?: number
+  width?: number
   aspectRatio: number
   preSrc: string
 }
@@ -24,7 +24,7 @@ const Container = styled.figure<{ aspectRatio: number }>`
     display: block;
     content: '';
     width: 100%;
-    padding-top: ${({ aspectRatio }) => aspectRatio}%;
+    padding-top: ${({ aspectRatio }) => aspectRatio * 100}%;
   }
 `
 
@@ -59,6 +59,7 @@ const Image: FunctionComponent<SearchResultsProps> = ({ className, testId, src, 
     setPreUrl(preSrc)
     setImgUrl(src)
   }
+
   useLazyLoad({
     callback: loadImage,
     ref: containerRef,

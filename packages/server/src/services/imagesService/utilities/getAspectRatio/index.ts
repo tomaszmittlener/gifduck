@@ -1,3 +1,3 @@
-const getAspectRatio = (width: number, height: number): number => (height / width) * 100
+const getAspectRatio = (width: number, height: number): number => height / width
 
 export default getAspectRatio

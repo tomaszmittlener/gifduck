@@ -12,7 +12,7 @@ exports[`Image renders correctly 1`] = `
   display: block;
   content: '';
   width: 100%;
-  padding-top: 20%;
+  padding-top: 122.22200000000001%;
 }
 
 .c1 {

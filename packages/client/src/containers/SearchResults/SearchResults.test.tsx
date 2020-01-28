@@ -14,13 +14,13 @@ const results: ImageData[] = [
       height: 100,
       url: 'image-url',
       width: 200,
-      aspectRatio: 20,
+      aspectRatio: 1.2222,
     },
     preview: {
       width: 50,
       url: 'preview-url',
       height: 100,
-      aspectRatio: 20,
+      aspectRatio: 0.44444,
     },
   },
 ]

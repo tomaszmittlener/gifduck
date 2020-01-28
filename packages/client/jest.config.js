@@ -6,10 +6,10 @@ module.exports = {
   moduleNameMapper: {
     '^styles[/](.*)': '<rootDir>/src/styles/$1',
     '^components[/](.*)': '<rootDir>/src/components/$1',
-    '^pages[/](.*)': '<rootDir>/src/pages/$1',
+    '^views[/](.*)': '<rootDir>/src/views/$1',
     '^containers[/](.*)': '<rootDir>/src/containers/$1',
     '^services[/](.*)': '<rootDir>/src/services/$1',
-    '^utilities[/](.*)': '<rootDir>/src/utilities/$1',
+    '^common[/](.*)': '<rootDir>/src/common/$1',
     '^hooks[/](.*)': '<rootDir>/src/hooks/$1',
   },
 }
