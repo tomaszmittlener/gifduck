@@ -1,4 +1,4 @@
-import { ImageData, SearchQuery } from '@gifduck/common-types/imagesService'
+import { ImageData, SearchQuery } from '@gifduck/types/imagesService'
 import giphyService from './services/giphyService'
 import pixabayService from './services/pixabayService'
 import formatGiphyResponse from './utilities/formarGiphyResponse'

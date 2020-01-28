@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import { ImagesSearchResponse, SearchQuery, SearchQueryKeys, ImageData } from '@gifduck/common-types/imagesService'
+import { ImagesSearchResponse, SearchQuery, SearchQueryKeys, ImageData } from '@gifduck/types/imagesService'
 import imagesService from 'services/imagesService'
 import { createError } from 'middleware/errorHandlerMiddleware'
 import logger from 'common/logger'

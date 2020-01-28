@@ -1,6 +1,6 @@
 import Axios, { AxiosPromise } from 'axios'
 import { stringify } from 'querystring'
-import { SearchQuery, SearchQueryKeys } from '@gifduck/common-types/imagesService'
+import { SearchQuery, SearchQueryKeys } from '@gifduck/types/imagesService'
 import { GiphyImageResponse, GiphySearchQuery } from './types'
 
 interface GiphyService {

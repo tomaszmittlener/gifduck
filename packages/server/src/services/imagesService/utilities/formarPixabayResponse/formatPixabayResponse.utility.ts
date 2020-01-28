@@ -1,4 +1,4 @@
-import { ImageData } from '@gifduck/common-types/imagesService'
+import { ImageData } from '@gifduck/types/imagesService'
 import { PixabayImageResponse } from '../../services/pixabayService/types'
 import getAspectRatio from '../getAspectRatio'
 

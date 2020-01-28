@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
-import { SearchQueryKeys, ImageData, SearchQuery } from '@gifduck/common-types/imagesService'
+import { SearchQueryKeys, ImageData, SearchQuery } from '@gifduck/types/imagesService'
 
 import { getQuery } from 'utilities/query'
 import imagesService from 'services/imagesService'

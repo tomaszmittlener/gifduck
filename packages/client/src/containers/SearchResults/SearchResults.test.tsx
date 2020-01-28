@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
-import { ImageData } from '@gifduck/common-types/imagesService'
+import { ImageData } from '@gifduck/types/imagesService'
 import { MemoryRouter } from 'react-router-dom'
 import Theme from 'styles/theme'
 

@@ -52,54 +52,74 @@ Requirements:
 
   - [Express](https://github.com/expressjs/express) application.
 
-- **@gifduck/common-config**
-- common configuration files library shared across @gifduck packages
-- **@gifduck/common-types**
-- [TypeScript](https://github.com/Microsoft/TypeScript) types files library shared across @gifduck packages.
+- **@gifduck/types**
+  - [TypeScript](https://github.com/Microsoft/TypeScript) types files library shared across @gifduck packages.
+- **@gifduck/config-** configuration files shared across packages. All dependencies are peerDependencies, so client page needs to install this packages locally.
+  - **@gifduck/config-babel**
+    - common babel configuration files shared across @gifduck packages
+      - babel.config.js
+  - **@gifduck/config-jest**
+
+    - common jest configuration files shared across @gifduck packages
+      - eslintrc.js
+
+  - **@gifduck/config-eslint**
+
+    - common eslint configuration files shared across @gifduck packages
+      - jest.config.js
+
+  - **@gifduck/config-prettier**
+    - common prettier configuration files shared across @gifduck packages
+      - prettierrc.js
+  - **@gifduck/config-tsconfig**
+    - common tsconfig configuration files shared across @gifduck packages
+      - tsconfig.js
 
 ### Basic structure and configurations
 
 ```
 packages/
-  somePackage/
-    dist/                       // folder with built app
-    config/
-        webpack.dev.ts          // webpack configuration file for development environemnt
-        webpack.prod.ts         // webpack configuration file for production environemnt
-    coverage                    // test coverage files
-    src/
-        components/
-            foo/
-                index.ts        // main file
-                foo.test.ts     // test file with jests for index.ts
-        index.tsx
-    package.json                // package-specific deps and scripts
-    README.md                   // shown in npmjs.com. included in npm artifact [TODO]
-    tsconfig.json               // typescript configuration
-    .eslintrc                   // eslint (linter) configuration extended from common-config package
-    .prettierrc.js              // prettier (formatter) extended from common-config package
-    .babel.config.js            // babel (compiler) extended from common-config package
-    .jest.config.js             // jest (testing framework) extended from common-config package
-    .setupTests.js              // jest (testing framework) additional packages setup for all the tests in package
-    .eslintignore               // eslint (linter) ignored directories/files
-    package.json                // common dev deps and workspace-wide scripts
-    .env                        // package specific environment variables, not shared in the repository
-    common/                     // keeps independent packages, shared across monorepo
-        some-common-package/    // structure may vary. ie. only config files are exported or can follow usual package schema
-            package.json        // common dev deps and workspace-wide scripts
+    somePackage/
+        dist/                       // folder with built app
+        config/
+            webpack.dev.ts          // webpack configuration file for development environemnt
+            webpack.prod.ts         // webpack configuration file for production environemnt
+        coverage                    // test coverage files
+        src/
+            components/
+                foo/
+                    index.ts        // main file
+                    foo.test.ts     // test file with jests for index.ts
+            index.tsx
+        package.json                // package-specific deps and scripts
+        README.md                   // shown in npmjs.com. included in npm artifact [TODO]
+        tsconfig.json               // typescript configuration
+        .eslintrc                   // eslint (linter) configuration extended from config-eslint package
+        .prettierrc.js              // prettier (formatter) extended from config-prettier package
+        .babel.config.js            // babel (compiler) extended from config-babel package
+        .jest.config.js             // jest (testing framework) extended from config-jest package
+        .setupTests.js              // jest (testing framework) additional packages setup for all the tests in package
+        .eslintignore               // eslint (linter) ignored directories/files
+        package.json                // common dev deps and workspace-wide scripts
+        .env                        // package specific environment variables, not shared in the repository
+    common/                         // keeps independent packages, shared across monorepo
+        some-common-package/
+            package.json
+        config/                     // common dev deps and workspace-wide scripts
+            some-config-package/
+                package.json
 .editorconfig                   // editorconfig configuration file
 .eslintignore                   // eslint (linter) ignored directories/files
 .prettierignore                 // prettier (formatter) ignored directories/files
-.eslintrc                       // eslint (linter) configuration
 .gitignore                      // github's default node gitignore with customizations
-.prettierrc.js                  // prettier (formatter) configuration
+.prettierrc.js                  // prettier (formatter) configuration  extended from config-prettier package
 lerna.json                      // lerna configuration
 package.json                    // common dev deps and workspace-wide scripts
 README.md                       // workspace-wide information. shown in github
 yarn.lock                       // the only lock file in the repo. all packages combined
 ```
 
-### Dependency management
+### Dependency management - general rules for lerna & yarn monorepo type project
 
 `devDependencies` are shared between all packages within the monorepo.
 
@@ -120,13 +140,13 @@ New `dependencies` can be added to the specific package using lerna scoped comma
 lerna add --scope @gifduck/worspace-name <package name>
 ```
 
-Packages depend on sibling packages within the monorepo. For example, in this repo, `@gifduck/client depends on`@gifcudk/common-config`. This relationship is just a normal dependency, and can be described in the`package.json`of`app` like so:
+Packages depend on sibling packages within the monorepo. For example, in this repo, `@gifduck/client depends on`@gifcudk/babel-config`. This relationship is just a normal dependency, and can be described in the`package.json`of`app` like so:
 
 ```json
 {
   "name": "@gifduck/client",
   "dependencies": {
-    "@gifduck/common-config": "<package version>"
+    "@gifduck/config-babel": "<package version>"
   }
 }
 ```
@@ -155,33 +175,33 @@ Basic workflow described i goals to be achieved:
   - setup jest and coverage report
   - goal: client and server are able to run tests and generate coverage
 
-- [ ] [FE] setup
+- [x] [FE] setup
 
   - create Client folders structure, layout base, grid, services, routing
   - goal: app is ready to develop needed views and features
 
-- [ ] [FE] show mock data
+- [x] [FE] show mock data
 
   - goal: display views and images with mocks, decide what will be needed from backend
 
-- [ ] [BE] setup
+- [x] [BE] setup
 
   - folders structure, logging, error handling, routing, controllers, services
   - goal: server should be running and responding with mock data on request
 
-- [ ] [BE] respond with real data
+- [x] [BE] respond with real data
 
   - connect to any service and respond with correctly structured data
   - goal: Client ready to receive real data
 
-- [ ] [FE] Search feature + layout upgrade
+- [x] [FE] Search feature + layout upgrade
 
   - Client should connect to the real service and display data correctly, further layout work)
   - goal: Client should be able communicate with server - search and display real data on search request
 
-- [ ] [BE] Pin up all services
+- [x] [BE] Pin up all services
 
-  - server supports both providers)
+  - server supports both providers
   - goal: Server makes search to both services and to all at once
 
 - [ ] [FE] Multiple services support
@@ -191,13 +211,12 @@ Basic workflow described i goals to be achieved:
 Example Further development features:
 
 - [ ] [BE] Introduce pagination
-
-  - TODO
-
-- [ ] [FE] Introduce pagination
-  - TODO
+  - find the optimal way to make pagination for both services at once
+  - goal: client can paginate through results
 
 Things to do:
 
-- [ ] [General] setup jest to run tests for all packages and collect global coverage
+- [ ] [General] setup jest to collect global coverage
 - [ ] [General] add Readme for each package
+- [ ] [General] make a common build pipeline for all packages using lerna scripts
+- [ ] [General] adjust configuration for npm publishing

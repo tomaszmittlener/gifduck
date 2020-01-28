@@ -1,6 +1,6 @@
 import Axios, { AxiosPromise } from 'axios'
 import { stringify } from 'querystring'
-import { SearchQuery, SearchQueryKeys } from '@gifduck/common-types/imagesService'
+import { SearchQuery, SearchQueryKeys } from '@gifduck/types/imagesService'
 import { PixabayImageResponse, PixabaySearchQuery } from './types'
 
 interface PixabayService {
