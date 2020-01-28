@@ -1,5 +1,6 @@
-import React, { FunctionComponent, useState, useEffect, useRef } from 'react'
+import React, { FunctionComponent, useState, useRef } from 'react'
 import styled from 'styled-components'
+import useLazyLoad from 'hooks/uselayzLoad'
 
 interface SearchResultsProps {
   className?: string
@@ -54,37 +55,16 @@ const Image: FunctionComponent<SearchResultsProps> = ({ className, testId, src, 
     setPreUrl(PLACEHOLDER)
   }
 
-  // lazy load images
-  useEffect(() => {
-    let observer: IntersectionObserver
-    let didCancel = false
-
-    if (containerRef?.current && imgUrl !== src && preSrc !== preUrl) {
-      observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (containerRef?.current && !didCancel && (entry.intersectionRatio > 0 || entry.isIntersecting)) {
-              setPreUrl(preSrc)
-              setImgUrl(src)
-              observer.unobserve(containerRef.current)
-            }
-          })
-        },
-        {
-          threshold: 0.01,
-          rootMargin: '75%',
-        },
-      )
-      observer.observe(containerRef.current)
-    }
-    return () => {
-      didCancel = true
-      // on component cleanup, we remove the listener
-      if (observer && observer.unobserve) {
-        containerRef.current && observer.unobserve(containerRef.current)
-      }
-    }
-  }, [src, imgUrl, preSrc, preUrl, containerRef])
+  const loadImage = () => {
+    setPreUrl(preSrc)
+    setImgUrl(src)
+  }
+  useLazyLoad({
+    callback: loadImage,
+    ref: containerRef,
+    deps: [src, imgUrl, preSrc, preUrl, containerRef],
+    shouldObserve: imgUrl !== src && preSrc !== preUrl,
+  })
 
   return (
     <Container data-testid={testId} className={className} aspectRatio={aspectRatio} ref={containerRef}>

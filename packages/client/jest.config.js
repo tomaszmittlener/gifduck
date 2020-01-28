@@ -10,5 +10,6 @@ module.exports = {
     '^containers[/](.*)': '<rootDir>/src/containers/$1',
     '^services[/](.*)': '<rootDir>/src/services/$1',
     '^utilities[/](.*)': '<rootDir>/src/utilities/$1',
+    '^hooks[/](.*)': '<rootDir>/src/hooks/$1',
   },
 }
