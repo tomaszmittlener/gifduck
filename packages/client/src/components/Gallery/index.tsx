@@ -6,19 +6,20 @@ interface GalleryProps {
   testId?: string
 }
 
-const Container = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  line-height: 0;
-  column-count: 1;
-  column-gap: 0;
+// eight columns layout
+const COLUMN_GAP = 1
+// column widths in %. Sum needs to equal 93 (eight columns will create 7 gaps. columns + gaps need to make 100% of container width)
+const columns = [6, 14, 11, 15, 5, 10, 9, 23]
 
-  ${({ theme }) => theme.breakpoints.tablet} {
-    column-count: 2;
-  }
-  ${({ theme }) => theme.breakpoints.desktop} {
-    column-count: 4;
+const Container = styled.ul`
+  padding: 0;
+  display: grid;
+  grid-row-gap: ${({ theme }) => theme.ms(-1)};
+  grid-column-gap: ${COLUMN_GAP}%;
+  grid-template-columns: 1fr;
+  ${({ theme: { breakpoints } }) => breakpoints.tablet} {
+    grid-row-gap: ${({ theme }) => theme.ms(4)};
+    grid-template-columns: ${columns.map(c => `${c}% `)};
   }
 `
 

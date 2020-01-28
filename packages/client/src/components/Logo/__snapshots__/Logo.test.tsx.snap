@@ -2,10 +2,10 @@
 
 exports[`Logo renders correctly 1`] = `
 .c0 {
-  font-size: 2.565784513950348rem;
+  font-size: 2.2806973457336426rem;
   font-family: Pacifico,sans-serif;
   color: #F2C94C;
-  padding: 1.265625rem 0;
+  line-height: 2;
   width: auto;
 }
 
@@ -13,7 +13,7 @@ exports[`Logo renders correctly 1`] = `
   <label
     class="c0"
   >
-    🐤 gifduck
+    🐤gifduck
   </label>
 </div>
 `;

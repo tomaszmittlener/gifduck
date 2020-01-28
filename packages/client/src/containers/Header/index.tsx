@@ -12,18 +12,22 @@ interface HeaderProps {
 }
 
 const Container = styled.header`
-  ${({ theme }) => theme.grid.container()};
   position: sticky;
   top: 0;
   width: 100%;
   z-index: ${({ theme: { layers } }) => layers.top};
   background-color: ${({ theme }) => theme.colors.grays.black};
-  align-self: center;
+`
+
+const Wrapper = styled.div`
+  ${({ theme }) => theme.grid.container()};
+  margin: 0 auto;
 `
 
 const SearchForm = styled.form`
   ${({ theme }) => theme.grid.span(1, 8)};
   display: flex;
+  padding: 0 0 ${({ theme }) => theme.ms(4)} 0;
 `
 
 const SearchButton = styled.button`
@@ -34,6 +38,7 @@ const SearchButton = styled.button`
   padding: 0;
   margin: 0;
   cursor: pointer;
+  border-radius: 0 10px 10px 0;
 `
 
 const SearchInput = styled.input`
@@ -46,9 +51,11 @@ const SearchInput = styled.input`
   font-family: ${({ theme }) => theme.typography.fonts.default};
   padding: 0 ${({ theme }) => theme.ms(0)};
   width: 100%;
+  border-radius: 10px 0 0 10px;
 `
 
 const StyledLogo = styled(Logo)`
+  padding: ${({ theme }) => theme.ms(-2)} 0;
   ${({ theme }) => theme.grid.span(1, 8)};
   justify-self: center;
   ${({ theme }) => theme.breakpoints.tablet} {
@@ -80,11 +87,13 @@ const Header: FunctionComponent<HeaderProps> = ({ className, testId }) => {
 
   return (
     <Container data-testid={testId} className={className}>
-      <StyledLogo />
-      <SearchForm onSubmit={handleSubmit}>
-        <SearchInput type="text" name="search" onChange={handleInputChange} placeholder="Search for Images..." />
-        <SearchButton>🔎</SearchButton>
-      </SearchForm>
+      <Wrapper>
+        <StyledLogo />
+        <SearchForm onSubmit={handleSubmit}>
+          <SearchInput type="text" name="search" onChange={handleInputChange} placeholder="Search for Images..." />
+          <SearchButton>🔎</SearchButton>
+        </SearchForm>
+      </Wrapper>
     </Container>
   )
 }

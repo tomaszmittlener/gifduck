@@ -6,19 +6,19 @@ interface LogoProps {
   testId?: string
 }
 
-const StyledLogo = styled.label`
-  font-size: ${({ theme }) => theme.ms(8)};
+const Text = styled.label`
+  font-size: ${({ theme }) => theme.ms(7)};
   font-family: ${({ theme }) => theme.typography.fonts.secondary};
   color: ${({ theme }) => theme.colors.accent.default};
-  padding: ${({ theme }) => theme.ms(2)} 0;
+  line-height: 2;
   width: auto;
 `
 
 const Logo: FunctionComponent<LogoProps> = ({ className, testId }) => {
   return (
-    <StyledLogo data-testid={testId} className={className}>
-      🐤 gifduck
-    </StyledLogo>
+    <Text data-testid={testId} className={className}>
+      🐤gifduck
+    </Text>
   )
 }
 

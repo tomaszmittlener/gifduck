@@ -9,7 +9,7 @@ interface HeaderProps {
 const Container = styled.footer`
   margin: auto 0 0 0;
   width: 100%;
-  min-height: ${({ theme }) => theme.ms(20)};
+  min-height: ${({ theme }) => theme.ms(25)};
   background-color: ${({ theme }) => theme.colors.accent.default};
   align-items: center;
   justify-content: center;

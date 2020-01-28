@@ -4,7 +4,7 @@ exports[`Footer renders correctly 1`] = `
 .c0 {
   margin: auto 0 0 0;
   width: 100%;
-  min-height: 10.5450938424492rem;
+  min-height: 19.00260151070504rem;
   background-color: #F2C94C;
   -webkit-align-items: center;
   -webkit-box-align: center;

@@ -18,7 +18,7 @@ const PageWrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.grays.black};
+  background-color: ${({ theme }) => theme.colors.grays.white};
 `
 
 const Main = styled.main`
@@ -27,7 +27,7 @@ const Main = styled.main`
   flex-wrap: wrap;
   align-items: center;
   min-height: 50vh;
-  padding: ${({ theme }) => theme.ms(10)} 0;
+  padding: 0 0 ${({ theme }) => theme.ms(15)} 0;
 `
 
 const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {

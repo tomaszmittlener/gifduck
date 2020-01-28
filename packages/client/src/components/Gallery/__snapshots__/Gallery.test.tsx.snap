@@ -2,27 +2,17 @@
 
 exports[`Gallery renders correctly 1`] = `
 .c0 {
-  margin: 0;
   padding: 0;
-  list-style: none;
-  line-height: 0;
-  -webkit-column-count: 1;
-  column-count: 1;
-  -webkit-column-gap: 0;
-  column-gap: 0;
+  display: grid;
+  grid-row-gap: 0.8888888888888888rem;
+  grid-column-gap: 1%;
+  grid-template-columns: 1fr;
 }
 
 @media screen and (min-width:768px) {
   .c0 {
-    -webkit-column-count: 2;
-    column-count: 2;
-  }
-}
-
-@media screen and (min-width:1024px) {
-  .c0 {
-    -webkit-column-count: 4;
-    column-count: 4;
+    grid-row-gap: 1.601806640625rem;
+    grid-template-columns: 6% 14% 11% 15% 5% 10% 9% 23%;
   }
 }
 

@@ -13,7 +13,6 @@ interface SearchResultsProps {
 }
 
 const Container = styled.section`
-  background-color: ${({ theme }) => theme.colors.grays.black};
   ${({ theme }) => theme.grid.container()};
 `
 

@@ -1,41 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchResults renders correctly 1`] = `
-.c2 {
-  font-size: 2.565784513950348rem;
+.c3 {
+  font-size: 2.2806973457336426rem;
   font-family: Pacifico,sans-serif;
   color: #F2C94C;
-  padding: 1.265625rem 0;
+  line-height: 2;
   width: auto;
 }
 
 .c1 {
-  padding: 0 1rem;
-  grid-column-gap: 0.49327018427257213rem;
-  display: grid;
-  grid-template-columns: repeat(8,1fr);
-  width: 100%;
-  max-width: 1440px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1500;
   background-color: #343339;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
 }
 
-.c4 {
+.c2 {
+  padding: 0 1rem;
+  grid-column-gap: 0.49327018427257213rem;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.c5 {
   grid-column: 1 / 9;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 0 1.601806640625rem 0;
 }
 
-.c6 {
+.c7 {
   height: 3.247321025468409rem;
   width: 3.247321025468409rem;
   border: none;
@@ -43,9 +45,10 @@ exports[`SearchResults renders correctly 1`] = `
   padding: 0;
   margin: 0;
   cursor: pointer;
+  border-radius: 0 10px 10px 0;
 }
 
-.c5 {
+.c6 {
   border: none;
   line-height: 1.75;
   height: 3.247321025468409rem;
@@ -55,17 +58,19 @@ exports[`SearchResults renders correctly 1`] = `
   font-family: Open Sans,sans-serif;
   padding: 0 1rem;
   width: 100%;
+  border-radius: 10px 0 0 10px;
 }
 
-.c3 {
+.c4 {
+  padding: 0.7901234567901234rem 0;
   grid-column: 1 / 9;
   justify-self: center;
 }
 
-.c11 {
+.c12 {
   margin: auto 0 0 0;
   width: 100%;
-  min-height: 10.5450938424492rem;
+  min-height: 19.00260151070504rem;
   background-color: #F2C94C;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -82,24 +87,20 @@ exports[`SearchResults renders correctly 1`] = `
   padding: 1.423828125rem 0px;
 }
 
-.c12 {
+.c13 {
   color: #0D2E4D;
   font-family: Pacifico,sans-serif;
 }
 
-.c9 {
-  margin: 0;
+.c10 {
   padding: 0;
-  list-style: none;
-  line-height: 0;
-  -webkit-column-count: 1;
-  column-count: 1;
-  -webkit-column-gap: 0;
-  column-gap: 0;
+  display: grid;
+  grid-row-gap: 0.8888888888888888rem;
+  grid-column-gap: 1%;
+  grid-template-columns: 1fr;
 }
 
-.c8 {
-  background-color: #343339;
+.c9 {
   padding: 0 1rem;
   grid-column-gap: 0.49327018427257213rem;
   display: grid;
@@ -108,7 +109,7 @@ exports[`SearchResults renders correctly 1`] = `
   max-width: 1440px;
 }
 
-.c10 {
+.c11 {
   grid-column: 1 / 9;
 }
 
@@ -121,10 +122,10 @@ exports[`SearchResults renders correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #343339;
+  background-color: #ECE9DE;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -140,62 +141,55 @@ exports[`SearchResults renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-height: 50vh;
-  padding: 3.247321025468409rem 0;
+  padding: 0 0 5.851777930691043rem 0;
 }
 
 @media screen and (min-width:768px) {
-  .c1 {
+  .c2 {
     padding: 0 1.423828125rem;
   }
 }
 
 @media screen and (min-width:1024px) {
-  .c1 {
+  .c2 {
     padding: 0 2.0272865295410156rem;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c1 {
+  .c2 {
     grid-column-gap: 1rem;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c3 {
+  .c4 {
     justify-self: left;
     grid-column: 1 / 4;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c9 {
-    -webkit-column-count: 2;
-    column-count: 2;
-  }
-}
-
-@media screen and (min-width:1024px) {
-  .c9 {
-    -webkit-column-count: 4;
-    column-count: 4;
+  .c10 {
+    grid-row-gap: 1.601806640625rem;
+    grid-template-columns: 6% 14% 11% 15% 5% 10% 9% 23%;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c8 {
+  .c9 {
     padding: 0 1.423828125rem;
   }
 }
 
 @media screen and (min-width:1024px) {
-  .c8 {
+  .c9 {
     padding: 0 2.0272865295410156rem;
   }
 }
 
 @media screen and (min-width:768px) {
-  .c8 {
+  .c9 {
     grid-column-gap: 1rem;
   }
 }
@@ -207,43 +201,47 @@ exports[`SearchResults renders correctly 1`] = `
     <header
       class="c1"
     >
-      <label
-        class="c2 c3"
+      <div
+        class="c2"
       >
-        🐤 gifduck
-      </label>
-      <form
-        class="c4"
-      >
-        <input
-          class="c5"
-          name="search"
-          placeholder="Search for Images..."
-          type="text"
-        />
-        <button
-          class="c6"
+        <label
+          class="c3 c4"
         >
-          🔎
-        </button>
-      </form>
+          🐤gifduck
+        </label>
+        <form
+          class="c5"
+        >
+          <input
+            class="c6"
+            name="search"
+            placeholder="Search for Images..."
+            type="text"
+          />
+          <button
+            class="c7"
+          >
+            🔎
+          </button>
+        </form>
+      </div>
     </header>
     <main
-      class="c7"
+      class="c8"
     >
       <section
-        class="c8"
+        class="c9"
       >
         <ul
-          class="c9 c10"
+          class="c10 c11"
         />
       </section>
     </main>
     <footer
-      class="c11"
+      class="c12"
     >
       <span
-        class="c12"
+        class="c13"
       >
         @gifduck by Tomasz Mittlener
       </span>
