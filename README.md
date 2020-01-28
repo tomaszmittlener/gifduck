@@ -55,6 +55,7 @@ Requirements:
 - **@gifduck/types**
   - [TypeScript](https://github.com/Microsoft/TypeScript) types files library shared across @gifduck packages.
 - **@gifduck/config-** configuration files shared across packages. All dependencies are peerDependencies, so client page needs to install this packages locally.
+
   - **@gifduck/config-babel**
     - common babel configuration files shared across @gifduck packages
       - babel.config.js
@@ -220,3 +221,5 @@ Things to do:
 - [ ] [General] add Readme for each package
 - [ ] [General] make a common build pipeline for all packages using lerna scripts
 - [ ] [General] adjust configuration for npm publishing
+- [ ] [Server] add missing tests
+- [ ] [Client] add missing tests
