@@ -14,7 +14,7 @@ interface ImagesService {
 
 const imagesService: ImagesService = {
   getImages: async (query: SearchQuery) => {
-    return instance.get(stringifyQuery(query))
+    return instance.get(`/search${stringifyQuery(query)}`)
   },
 }
 
