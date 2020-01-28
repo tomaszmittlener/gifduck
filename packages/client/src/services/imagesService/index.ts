@@ -1,6 +1,6 @@
 import Axios, { AxiosPromise } from 'axios'
 import { SearchQuery, ImagesSearchResponse } from '@gifduck/types/imagesService'
-import { stringifyQuery } from 'utilities/query'
+import { stringifyQuery } from 'common/queryString'
 
 const BASE_URL = process.env.IMAGES_SEARCH_BAES_URL
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 import { SearchQueryKeys, ImageData, SearchQuery } from '@gifduck/types/imagesService'
 
-import { getQuery } from 'utilities/query'
+import { getQuery } from 'common/queryString'
 import imagesService from 'services/imagesService'
 import Header from 'containers/Header'
 import Footer from 'containers/Footer'

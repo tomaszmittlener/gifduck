@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import GlobalStyles from 'styles/GlobalStyles'
 import Theme from 'styles/theme'
-import HomePage from 'pages/Home'
+import HomePage from 'views/Home'
 
 const App: FunctionComponent = () => {
   return (

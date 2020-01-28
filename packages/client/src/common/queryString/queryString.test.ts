@@ -6,7 +6,7 @@ interface TestCase<V, E> {
   expected: E
 }
 
-describe('query utilities - getQuery', () => {
+describe('common - queryString - getQuery', () => {
   const TEST_CASES: TestCase<string, DefaultQuery>[] = [
     {
       title: 'parses string correctly',
@@ -22,10 +22,10 @@ describe('query utilities - getQuery', () => {
   })
 })
 
-describe('query utilities - stringifyQuery', () => {
+describe('common - queryString - stringifyQuery', () => {
   const TEST_CASES: TestCase<DefaultQuery, string>[] = [
     {
-      title: 'stringifies query correctly',
+      title: 'stringifies queryString correctly',
       value: { a: 'a-value', b: 'b-value' },
       expected: '?a=a-value&b=b-value',
     },
@@ -38,7 +38,7 @@ describe('query utilities - stringifyQuery', () => {
   })
 })
 
-describe('query utilities - mergeQueries', () => {
+describe('common - queryString - mergeQueries', () => {
   const TEST_CASES: TestCase<[DefaultQuery, DefaultQuery], DefaultQuery>[] = [
     {
       title: 'adds new parameter',

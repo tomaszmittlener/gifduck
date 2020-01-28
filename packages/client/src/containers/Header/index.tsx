@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { SearchQueryKeys } from '@gifduck/types/imagesService'
 
 import Logo from 'components/Logo'
-import { getQuery, mergeQueries, stringifyQuery } from 'utilities/query'
+import { getQuery, mergeQueries, stringifyQuery } from 'common/queryString'
 
 interface HeaderProps {
   className?: string
