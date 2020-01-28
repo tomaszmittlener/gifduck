@@ -1,0 +1,13 @@
+{
+  "name": "@gifduck/config-prettier",
+  "version": "1.0.0",
+  "description": "@gifduck prettier config files",
+  "author": "Tomasz Mittlener",
+  "license": "ISC",
+  "peerDependencies": {
+    "prettier": ">=1.19.1"
+  },
+  "files": [
+    "prettierrc.js"
+  ]
+}

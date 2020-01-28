@@ -1,5 +1,5 @@
 {
-  "extends": "@gifduck/common-config/base.tsconfig.json",
+  "extends": "@gifduck/config-tsconfig/tsconfig.json",
   "compilerOptions": {
     "lib": ["es5", "es6", "dom"],
     "jsx": "react",

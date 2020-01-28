@@ -1,5 +1,5 @@
 {
-  "extends": "@gifduck/common-config/base.tsconfig.json",
+  "extends": "@gifduck/config-tsconfig/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
     "module": "commonjs",

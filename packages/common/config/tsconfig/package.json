@@ -1,0 +1,13 @@
+{
+  "name": "@gifduck/config-tsconfig",
+  "version": "1.0.0",
+  "description": "@gifduck typescript config files",
+  "author": "Tomasz Mittlener",
+  "license": "ISC",
+  "peerDependencies": {
+    "typescript": "3.7.5"
+  },
+  "files": [
+    "tsconfig.json"
+  ]
+}

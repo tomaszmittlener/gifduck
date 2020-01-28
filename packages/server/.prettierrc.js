@@ -1,1 +1,1 @@
-module.exports = require('@gifduck/common-config/base.prettierrc')
+module.exports = require('@gifduck/config-prettier/prettierrc')

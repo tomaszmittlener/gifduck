@@ -1,4 +1,4 @@
-import baseConfig from '@gifduck/common-config/base.babel.config'
+import baseConfig from '@gifduck/config-babel/babel.config'
 
 const presets = [
   ...baseConfig.presets,

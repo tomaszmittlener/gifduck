@@ -22,7 +22,8 @@
   "workspaces": [
     "packages/client",
     "packages/server",
-    "packages/common/*"
+    "packages/common/types",
+    "packages/common/config/*"
   ],
   "devDependencies": {
     "@commitlint/cli": "8.3.5",

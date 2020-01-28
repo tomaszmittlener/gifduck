@@ -5,7 +5,8 @@
   "author": "Tomasz Mittlener",
   "license": "ISC",
   "devDependencies": {
-    "@gifduck/common-config": "1.0.0"
+    "@gifduck/config-tsconfig": "1.0.0",
+    "@gifduck/config-eslint": "1.0.0"
   },
   "files": [
     "imagesService/index.ts"

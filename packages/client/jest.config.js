@@ -1,5 +1,5 @@
 module.exports = {
-  ...require('@gifduck/common-config/base.jest.config.js'),
+  ...require('@gifduck/config-jest/jest.config.js'),
   name: '@gifduck/client',
   displayName: 'client',
   // use mapper for jest to understand the absolute paths inside project

@@ -1,1 +1,1 @@
-module.exports = require('@gifduck/common-config/base.eslintrc')
+module.exports = require('@gifduck/config-eslint/eslintrc')

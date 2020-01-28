@@ -1,4 +1,4 @@
-const baseConfig = require('@gifduck/common-config/base.eslintrc')
+const baseConfig = require('@gifduck/config-eslint/eslintrc')
 
 module.exports = {
   ...baseConfig,
