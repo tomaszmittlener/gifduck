@@ -26,13 +26,7 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({ className, testI
       <StyledGallery>
         {results.map(result => (
           <GalleryItem key={result.id}>
-            <Image
-              src={result.image.url}
-              width={result.image.width}
-              height={result.image.height}
-              aspectRatio={result.image.aspectRatio}
-              preSrc={result.preview.url}
-            />
+            <Image src={result.image.url} aspectRatio={result.image.aspectRatio} preSrc={result.preview.url} />
           </GalleryItem>
         ))}
       </StyledGallery>

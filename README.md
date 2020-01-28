@@ -223,3 +223,5 @@ Things to do:
 - [ ] [General] adjust configuration for npm publishing
 - [ ] [Server] add missing tests
 - [ ] [Client] add missing tests
+- [ ] [Client] components/image - should be more generic and support other scenarios
+- [ ] [General] images should have alt text for accessibility

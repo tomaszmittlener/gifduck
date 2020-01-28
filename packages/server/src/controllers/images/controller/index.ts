@@ -4,6 +4,7 @@ import imagesService from 'services/imagesService'
 import { createError } from 'middleware/errorHandlerMiddleware'
 import logger from 'common/logger'
 import { HttpStatusCode } from 'common/types'
+
 const getSearchResponseBody = (imagesData: ImageData[]): ImagesSearchResponse => ({
   results: imagesData,
 })
@@ -21,13 +22,10 @@ const imagesController = {
         res.json(responseBody)
       }
     } catch (e) {
-      logger.error(e, 'Giphy Controller - Search')
+      logger.error(e, 'Giphy Controller - Search') // will also console any service errors
       const err = createError(req, res, next)('Something went wrong', HttpStatusCode.INTERNAL_SERVER_ERROR)
       next(err)
     }
-  },
-  error: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    return createError(req, res, next)('test error!', HttpStatusCode.BAD_REQUEST)
   },
 }
 
