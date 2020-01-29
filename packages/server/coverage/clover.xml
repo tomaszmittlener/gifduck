@@ -1,57 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1580052125065" clover="3.2.0">
-  <project timestamp="1580052125065" name="All files">
-    <metrics statements="27" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1" elements="32" coveredelements="4" complexity="0" loc="27" ncloc="27" packages="4" files="4" classes="4"/>
-    <package name="src">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/server/src/index.ts">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.common.addNumbers">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.ts" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/server/src/common/addNumbers/index.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.common.env">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/server/src/common/env/index.ts">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.common.server">
-      <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/server/src/common/server/index.ts">
-        <metrics statements="19" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="1" count="0" type="stmt"/>
-        <line num="2" count="0" type="stmt"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1580287728646" clover="3.2.0">
+  <project timestamp="1580287728646" name="All files">
+    <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0" elements="11" coveredelements="0" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
+    <file name="index.ts" path="/Users/tomaszmittlener/Documents/projects/mittlener/gifduck/packages/server/src/common/logger/index.ts">
+      <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>

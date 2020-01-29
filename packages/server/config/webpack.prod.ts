@@ -2,11 +2,13 @@ import path from 'path'
 import { Configuration, ProgressPlugin } from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import nodeExternals from 'webpack-node-externals'
+import Dotenv from 'dotenv-webpack'
 
 const SRC_DIR = path.join(__dirname, '../src')
 const DIST_DIR = path.join(__dirname, '../dist')
 
 const progressPlugin = new ProgressPlugin()
+const DotEnvPlugin = new Dotenv()
 
 const config: Configuration = {
   mode: 'production',
@@ -44,7 +46,7 @@ const config: Configuration = {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.js', '.jsx', '.tsx', '.ts', '.json'],
   },
-  plugins: [progressPlugin],
+  plugins: [DotEnvPlugin, progressPlugin],
 }
 
 export default config

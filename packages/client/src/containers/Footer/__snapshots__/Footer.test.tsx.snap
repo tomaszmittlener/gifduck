@@ -22,8 +22,9 @@ exports[`Footer renders correctly 1`] = `
 }
 
 .c1 {
-  color: #0D2E4D;
+  color: #706155;
   font-family: Pacifico,sans-serif;
+  font-size: 0.7901234567901234rem;
 }
 
 <div>
@@ -33,7 +34,7 @@ exports[`Footer renders correctly 1`] = `
     <span
       class="c1"
     >
-      @gifduck by Tomasz Mittlener
+      @gifduck
     </span>
   </footer>
 </div>

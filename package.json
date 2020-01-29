@@ -40,12 +40,12 @@
     "dev:client": "lerna exec --scope @gifduck/client yarn dev",
     "dev:server": "lerna exec --scope @gifduck/server yarn dev",
     "test:client": "lerna exec --scope @gifduck/client yarn test",
-    "test:client:w": "yarn test:client -- -- --watch",
     "test:server": "lerna exec --scope @gifduck/server yarn test",
-    "test:server:w": "yarn test:client -- -- --watch",
-    "client:add": "lerna add --scope @gifduck/client",
-    "server:add": "lerna add --scope @gifduck/server",
-    "client:check": "lerna add --scope @gifduck/client yarn check-pkg"
+    "check:client": "lerna exec --scope @gifduck/client yarn check-pkg",
+    "check:server": "lerna exec --scope @gifduck/server yarn check-pkg",
+    "build:client": "lerna exec --scope @gifduck/client yarn build",
+    "build:server": "lerna exec --scope @gifduck/server yarn build",
+    "start:server": "node ./packages/server/dist/index.js"
   },
   "husky": {
     "hooks": {

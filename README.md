@@ -18,6 +18,27 @@ Requirements:
 
 - run `yarn` in project root
 
+### Environment variables
+
+- each package keeps its environment variables separately. to use them, set .env file in package you want to use
+- currently only **@gifduck/client** and **@gifduck/server** require setting env variables
+
+**@gifduck/client**
+
+```
+IMAGES_SEARCH_BAES_URL              // base url to images service
+```
+
+**@gifduck/client**
+
+```
+PORT                                // port to run server
+APP_ID                              // id of the app. will be ussed for logging
+LOG_LEVEL                           // 'fatal', 'error', 'warn', 'info', 'debug', 'trace' or 'silent'
+GIPHY_API_KEY                       // giphy service api key
+PIXABAY_API_KEY                     // pixabay service api key
+```
+
 ### Running development app
 
 - run client development mode: `yarn dev:client`
@@ -25,12 +46,17 @@ Requirements:
 
 ### Running production app
 
-- [TODO]
+- building:
+  - build client: `yarn build:client`
+  - build server: `yarn build:server`
+- running the production apps:
+  - start server: `yarn srart:server`
+  - start client: open packages/client/dist/index.html in browser
 
 ### Running tests
 
-- run client tests mode: `yarn test:client` or `yarn test:client:w` in watch mode
-- run server tests mode: `yarn test:server` or `yarn test:server:w` in watch mode
+- run client tests mode: `yarn test:client`
+- run server tests mode: `yarn test:server`
 
 ## Setup explained
 

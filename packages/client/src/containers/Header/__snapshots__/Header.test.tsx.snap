@@ -7,6 +7,8 @@ exports[`Header renders correctly 1`] = `
   color: #F2C94C;
   line-height: 2;
   width: auto;
+  -webkit-animation: dGzoaH 1s ease-out none;
+  animation: dGzoaH 1s ease-out none;
 }
 
 .c0 {

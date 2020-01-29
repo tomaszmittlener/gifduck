@@ -7,6 +7,8 @@ exports[`SearchResults renders correctly 1`] = `
   color: #F2C94C;
   line-height: 2;
   width: auto;
+  -webkit-animation: dGzoaH 1s ease-out infinite;
+  animation: dGzoaH 1s ease-out infinite;
 }
 
 .c1 {
@@ -67,7 +69,7 @@ exports[`SearchResults renders correctly 1`] = `
   justify-self: center;
 }
 
-.c12 {
+.c11 {
   margin: auto 0 0 0;
   width: 100%;
   min-height: 19.00260151070504rem;
@@ -87,17 +89,10 @@ exports[`SearchResults renders correctly 1`] = `
   padding: 1.423828125rem 0px;
 }
 
-.c13 {
-  color: #0D2E4D;
+.c12 {
+  color: #706155;
   font-family: Pacifico,sans-serif;
-}
-
-.c10 {
-  padding: 0;
-  display: grid;
-  grid-row-gap: 0.8888888888888888rem;
-  grid-column-gap: 1%;
-  grid-template-columns: 1fr;
+  font-size: 0.7901234567901234rem;
 }
 
 .c9 {
@@ -107,10 +102,16 @@ exports[`SearchResults renders correctly 1`] = `
   grid-template-columns: repeat(8,1fr);
   width: 100%;
   max-width: 1440px;
+  height: 100%;
 }
 
-.c11 {
-  grid-column: 1 / 9;
+.c10 {
+  grid-column: 3 / 7;
+  justify-self: center;
+  font-family: Open Sans,sans-serif;
+  color: #343339;
+  font-size: 3.247321025468409rem;
+  text-align: center;
 }
 
 .c0 {
@@ -170,13 +171,6 @@ exports[`SearchResults renders correctly 1`] = `
 }
 
 @media screen and (min-width:768px) {
-  .c10 {
-    grid-row-gap: 1.601806640625rem;
-    grid-template-columns: 6% 14% 11% 15% 5% 10% 9% 23%;
-  }
-}
-
-@media screen and (min-width:768px) {
   .c9 {
     padding: 0 1.423828125rem;
   }
@@ -232,18 +226,20 @@ exports[`SearchResults renders correctly 1`] = `
       <section
         class="c9"
       >
-        <ul
-          class="c10 c11"
-        />
+        <h3
+          class="c10"
+        >
+          Type in whats on your mind!
+        </h3>
       </section>
     </main>
     <footer
-      class="c12"
+      class="c11"
     >
       <span
-        class="c13"
+        class="c12"
       >
-        @gifduck by Tomasz Mittlener
+        @gifduck
       </span>
     </footer>
   </div>

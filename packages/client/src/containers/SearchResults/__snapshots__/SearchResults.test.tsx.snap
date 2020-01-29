@@ -46,6 +46,7 @@ exports[`SearchResults renders correctly 1`] = `
   grid-template-columns: repeat(8,1fr);
   width: 100%;
   max-width: 1440px;
+  height: 100%;
 }
 
 .c2 {
