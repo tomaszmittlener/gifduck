@@ -1,5 +1,5 @@
 import { ImageData } from '@gifduck/types/imagesService'
-import { PixabayImageResponse } from '../../services/pixabayService/types'
+import { PixabayImageResponse } from '../pixabayService/types'
 import getAspectRatio from '../getAspectRatio'
 
 type FormatGiphyResponse = (res: PixabayImageResponse) => ImageData[]

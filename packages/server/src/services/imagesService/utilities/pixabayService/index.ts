@@ -18,6 +18,7 @@ const getPixabayQuery = (apiKey: string, searchQuery: SearchQuery): PixabaySearc
   return {
     key: apiKey,
     q: searchQuery[SearchQueryKeys.searchText],
+    ['per_page']: 20,
   }
 }
 

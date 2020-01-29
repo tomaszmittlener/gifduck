@@ -18,6 +18,7 @@ const getGiphyQuery = (apiKey: string, searchQuery: SearchQuery): GiphySearchQue
   return {
     ['api_key']: apiKey,
     q: searchQuery[SearchQueryKeys.searchText],
+    limit: 20,
   }
 }
 
