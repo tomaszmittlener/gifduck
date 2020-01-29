@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState, useRef } from 'react'
 import styled from 'styled-components'
-import useLazyLoad from 'hooks/uselayzLoad'
+import useLazyLoad from 'hooks/useLazyLoad'
 
 interface SearchResultsProps {
   className?: string

@@ -9,58 +9,61 @@ App is setup with yarn workspaces, typescript, and lerna.
 
 ## How to use
 
-Requirements:
+### Requirements:
 
 - node v12 or higher (prod server is compiled to be compatible with node v.10)
 - yarn v1.21.1 or higher
 
 ### Installation
 
-- run `yarn` in project root
+1. get the repo
 
-### Environment variables
+   ```
+   $ git clone git@github.com:tomaszmittlener/gifduck.git
+   $ cd gifduck
+   ```
 
-- each package keeps its environment variables separately. to use them, set .env file in package you want to use
-- currently only **@gifduck/client** and **@gifduck/server** require setting env variables
+2. add environment variables [see here](#environment-variables)
 
-**@gifduck/client**
+### Running the app
 
-```
-IMAGES_SEARCH_BAES_URL              // base url to images service
-```
-
-**@gifduck/client**
-
-```
-PORT                                // port to run server
-APP_ID                              // id of the app. will be ussed for logging
-LOG_LEVEL                           // 'fatal', 'error', 'warn', 'info', 'debug', 'trace' or 'silent'
-GIPHY_API_KEY                       // giphy service api key
-PIXABAY_API_KEY                     // pixabay service api key
-```
-
-### Running development app
+#### development
 
 - run client development mode: `yarn dev:client`
 - run server development mode: `yarn dev:server`
 
-### Running production app
+#### production
 
 - building:
+
   - build client: `yarn build:client`
   - build server: `yarn build:server`
+
 - running the production apps:
-  - start server: `yarn srart:server`
-  - start client: open packages/client/dist/index.html in browser
+  - start server: `yarn start:server`
+  - start client: open `packages/client/dist/index.html` in browser
 
-### Running tests
+## Environment variables
 
-- run client tests mode: `yarn test:client`
-- run server tests mode: `yarn test:server`
+- each package keeps its environment variables separately. to use them add .env files to `packages/<package-name>`
+
+- **@gifduck/client**
+
+  ```
+  IMAGES_SEARCH_BAES_URL              // base url to images service
+  ```
+
+- **@gifduck/server**
+
+  ```
+  PORT                                // port to run server
+  APP_ID                              // id of the app. will be ussed for logging
+  LOG_LEVEL                           // 'fatal', 'error', 'warn', 'info', 'debug', 'trace' or 'silent'
+  GIPHY_API_KEY                       // giphy service api key
+  PIXABAY_API_KEY                     // pixabay service api key
+  ```
 
 ## Setup explained
-
-### Tooling
 
 - gifDuck as monorepo is installed using [yarn](https://github.com/yarnpkg/yarn).
 
@@ -146,6 +149,22 @@ README.md                       // workspace-wide information. shown in github
 yarn.lock                       // the only lock file in the repo. all packages combined
 ```
 
+### Scripts
+
+Each script command should be run using `yarn`
+
+Global:
+
+- `format` runs prettier for the whole project
+
+Package scoped:
+
+- `test:<package-name>` runs tests for the package
+- `check:<package-name>` runs type check for the package
+- `dev:<package-name>` runs package in development mode
+- `build:<package-name>` builds package
+- `start:<package-name>` starts package in production mode
+
 ### Dependency management - general rules for lerna & yarn monorepo type project
 
 `devDependencies` are shared between all packages within the monorepo.
@@ -178,9 +197,9 @@ Packages depend on sibling packages within the monorepo. For example, in this re
 }
 ```
 
-### Gifduck roadmap
+## Gifduck task manager
 
-Basic workflow described i goals to be achieved:
+### Basic workflow described i goals to be achieved:
 
 - [x] [General] planning:
 
@@ -242,13 +261,13 @@ Basic workflow described i goals to be achieved:
   - add source param to query and let client choose source of search (gifs/images)
   - goal: Client can search and display images from both services separately
 
-Example Further development features:
+### Example Further development features:
 
 - [ ] [BE] Introduce pagination
   - find the optimal way to make pagination for both services at once
   - goal: client can paginate through results
 
-Things to do:
+### Things to do:
 
 - [ ] [General] setup jest to collect global coverage
 - [ ] [General] add Readme for each package

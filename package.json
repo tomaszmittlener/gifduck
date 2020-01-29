@@ -35,7 +35,6 @@
     "prettier": "1.19.1"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces",
     "format": "pretty-quick",
     "dev:client": "lerna exec --scope @gifduck/client yarn dev",
     "dev:server": "lerna exec --scope @gifduck/server yarn dev",
