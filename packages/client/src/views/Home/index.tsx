@@ -1,13 +1,15 @@
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
-import { SearchQueryKeys, ImageData, SearchQuery } from '@gifduck/types/imagesService'
+import { ImageData, SearchQuery, SearchQueryKeys } from '@gifduck/types/imagesService'
 
 import { getQuery } from 'common/queryString'
 import imagesService from 'services/imagesService'
 import Header from 'containers/Header'
 import Footer from 'containers/Footer'
 import SearchResults from 'containers/SearchResults'
+import { FetchStatus } from 'common/types'
+import scrollToTop from 'common/scrollToTop'
 
 interface HomePageProps {
   className?: string
@@ -32,17 +34,26 @@ const Main = styled.main`
 
 const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
   const [results, storeResults] = useState<ImageData[]>([])
+  const [fetchStatus, updateFetchStatus] = useState<FetchStatus>(FetchStatus.Loading)
+
   const { search } = useLocation()
 
   const getData = async () => {
     try {
+      updateFetchStatus(FetchStatus.Loading)
+
       const searchText = getQuery(search)[SearchQueryKeys.searchText]
       const searchQuery: SearchQuery = {
         [SearchQueryKeys.searchText]: searchText ? String(searchText) : '',
       }
       const { data } = await imagesService.getImages(searchQuery)
       storeResults(data.results)
+      updateFetchStatus(FetchStatus.Loaded)
+
+      scrollToTop()
     } catch (e) {
+      updateFetchStatus(FetchStatus.Error)
+
       throw new Error(e)
     }
   }
@@ -53,7 +64,7 @@ const HomePage: FunctionComponent<HomePageProps> = ({ className, testId }) => {
 
   return (
     <PageWrapper data-testid={testId} className={className}>
-      <Header />
+      <Header isLoading={fetchStatus === FetchStatus.Loading} />
       <Main>
         <SearchResults results={results} />
       </Main>

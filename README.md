@@ -203,11 +203,18 @@ Basic workflow described i goals to be achieved:
 - [x] [BE] Pin up all services
 
   - server supports both providers
-  - goal: Server makes search to both services and to all at once
+  - goal: Server makes search to both services at once
 
-- [ ] [FE] Multiple services support
+- [x] [BE] Multiple services support (all)
+
   - connect to all services, add options to search feature
-  - goal: Client can search and display images from both services or from all at once
+
+- [ ] [BE] Multiple services support (split)
+  - add source param to query and let client choose source of search (gifs/images)
+  - goal: Client can search and display images from both services separately
+- [ ] [FE] Multiple services support (split)
+  - add source param to query and let client choose source of search (gifs/images)
+  - goal: Client can search and display images from both services separately
 
 Example Further development features:
 

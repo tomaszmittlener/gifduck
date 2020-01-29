@@ -18,14 +18,15 @@ const Container = styled.footer`
 `
 
 const Text = styled.span`
-  color: ${({ theme }) => theme.colors.accent.defaultInverted};
+  color: ${({ theme }) => theme.colors.primary.third};
   font-family: ${({ theme }) => theme.typography.fonts.secondary};
+  font-size: ${({ theme }) => theme.ms(-2)};
 `
 
 const Footer: FunctionComponent<HeaderProps> = ({ className, testId }) => {
   return (
     <Container data-testid={testId} className={className}>
-      <Text>@gifduck by Tomasz Mittlener</Text>
+      <Text>@gifduck</Text>
     </Container>
   )
 }

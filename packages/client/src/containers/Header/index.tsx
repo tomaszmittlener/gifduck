@@ -9,6 +9,7 @@ import { getQuery, mergeQueries, stringifyQuery } from 'common/queryString'
 interface HeaderProps {
   className?: string
   testId?: string
+  isLoading?: boolean
 }
 
 const Container = styled.header`
@@ -64,7 +65,7 @@ const StyledLogo = styled(Logo)`
   }
 `
 
-const Header: FunctionComponent<HeaderProps> = ({ className, testId }) => {
+const Header: FunctionComponent<HeaderProps> = ({ className, testId, isLoading = false }) => {
   const [searchInput, setSearchInput] = useState<string>('')
   const history = useHistory()
   const location = useLocation()
@@ -88,7 +89,7 @@ const Header: FunctionComponent<HeaderProps> = ({ className, testId }) => {
   return (
     <Container data-testid={testId} className={className}>
       <Wrapper>
-        <StyledLogo />
+        <StyledLogo isLoading={isLoading} />
         <SearchForm onSubmit={handleSubmit}>
           <SearchInput type="text" name="search" onChange={handleInputChange} placeholder="Search for Images..." />
           <SearchButton>🔎</SearchButton>
