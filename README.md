@@ -45,7 +45,7 @@ App is setup with yarn workspaces, typescript, and lerna.
 
 ## Environment variables
 
-- each package keeps its environment variables separately. to use them add .env files to `packages/<package-name>`
+Each package keeps its environment variables separately. to use them add .env files to `packages/<package-name>`
 
 - **@gifduck/client**
 
@@ -165,7 +165,7 @@ Package scoped:
 - `build:<package-name>` builds package
 - `start:<package-name>` starts package in production mode
 
-### Dependency management - general rules for lerna & yarn monorepo type project
+### Dependency management (general monorepo rules)
 
 `devDependencies` are shared between all packages within the monorepo.
 
@@ -191,7 +191,7 @@ Packages depend on sibling packages within the monorepo. For example, in this re
 ```json
 {
   "name": "@gifduck/client",
-  "dependencies": {
+  "devDependencies": {
     "@gifduck/config-babel": "<package version>"
   }
 }
@@ -199,7 +199,7 @@ Packages depend on sibling packages within the monorepo. For example, in this re
 
 ## Gifduck task manager
 
-### Basic workflow described i goals to be achieved:
+### Basic workflow:
 
 - [x] [General] planning:
 
@@ -264,8 +264,13 @@ Packages depend on sibling packages within the monorepo. For example, in this re
 ### Example Further development features:
 
 - [ ] [BE] Introduce pagination
+
   - find the optimal way to make pagination for both services at once
   - goal: client can paginate through results
+
+- [ ] [BE] Introduce image type filter
+  - let user decide which type of image he wants to search
+  - goal: client can choose search between gifs and images
 
 ### Things to do:
 
@@ -275,5 +280,6 @@ Packages depend on sibling packages within the monorepo. For example, in this re
 - [ ] [General] adjust configuration for npm publishing
 - [ ] [Server] add missing tests
 - [ ] [Client] add missing tests
-- [ ] [Client] components/image - should be more generic and support other scenarios
+- [ ] [Client] components/image - should be more generic and support other scenarios (see comments in component)
 - [ ] [General] images should have alt text for accessibility
+- [ ] [Server] rename "IMAGES_SEARCH_BAES_URL" env to "IMAGES_SEARCH_BASE_URL"
