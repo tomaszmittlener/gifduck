@@ -281,5 +281,5 @@ Packages depend on sibling packages within the monorepo. For example, in this re
 - [ ] [Server] add missing tests
 - [ ] [Client] add missing tests
 - [ ] [Client] components/image - should be more generic and support other scenarios (see comments in component)
-- [ ] [General] images should have alt text for accessibility
+- [ ] [Client] images should have alt text for accessibility
 - [ ] [Server] rename "IMAGES_SEARCH_BAES_URL" env to "IMAGES_SEARCH_BASE_URL"
