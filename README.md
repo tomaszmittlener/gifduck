@@ -5,7 +5,29 @@ gifDuck gets and displays GIF and Images from multiple data sources. Currently s
 - [Giphy](https://developers.giphy.com/docs/)
 - [Pixabay](https://pixabay.com/api/docs/)
 
-App is setup with yarn workspaces, typescript, and lerna.
+App is setup with yarn workspaces, lerna and Typescript to serve React Client and Express Server
+
+# Table of contents
+
+<!--ts-->
+
+- [How to use](#how-to-use)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Running the app](#running-the-app)
+- [Environment variables](#environment-variables)
+- [Setup explained](#setup-explained)
+- [Project structure and configuration](#project-structure-and-configurations)
+- [Scripts](#scripts)
+- [Dependency management](#dependency-management-general-monorepo-rules)
+- [Contribution](#contribution)
+- [Task Manager](#gifduck-task-manager)
+  - [Task Manager](#gifduck-task-manager)
+  - [Basic workflow](#basic-workflow)
+  - [Future features](#example-further-development-features)
+  - [Issues](#issues)
+
+<!--te-->
 
 ## How to use
 
@@ -82,8 +104,10 @@ Each package keeps its environment variables separately. to use them add .env fi
   - [Express](https://github.com/expressjs/express) application.
 
 - **@gifduck/types**
+
   - [TypeScript](https://github.com/Microsoft/TypeScript) types files library shared across @gifduck packages.
-- **@gifduck/config-** configuration files shared across packages. All dependencies are peerDependencies, so client page needs to install this packages locally.
+
+- **@gifduck/config-[package-name]>** configuration files shared across packages. All dependencies are peerDependencies, so client app needs to install this packages locally.
 
   - **@gifduck/config-babel**
     - common babel configuration files shared across @gifduck packages
@@ -100,12 +124,13 @@ Each package keeps its environment variables separately. to use them add .env fi
 
   - **@gifduck/config-prettier**
     - common prettier configuration files shared across @gifduck packages
+
       - prettierrc.js
   - **@gifduck/config-tsconfig**
     - common tsconfig configuration files shared across @gifduck packages
       - tsconfig.js
 
-### Basic structure and configurations
+### Project structure and configurations
 
 ```
 packages/
@@ -138,15 +163,15 @@ packages/
         config/                     // common dev deps and workspace-wide scripts
             some-config-package/
                 package.json
-.editorconfig                   // editorconfig configuration file
-.eslintignore                   // eslint (linter) ignored directories/files
-.prettierignore                 // prettier (formatter) ignored directories/files
-.gitignore                      // github's default node gitignore with customizations
-.prettierrc.js                  // prettier (formatter) configuration  extended from config-prettier package
-lerna.json                      // lerna configuration
-package.json                    // common dev deps and workspace-wide scripts
-README.md                       // workspace-wide information. shown in github
-yarn.lock                       // the only lock file in the repo. all packages combined
+.editorconfig                       // editorconfig configuration file
+.eslintignore                       // eslint (linter) ignored directories/files
+.prettierignore                     // prettier (formatter) ignored directories/files
+.gitignore                          // github's default node gitignore with customizations
+.prettierrc.js                      // prettier (formatter) configuration  extended from config-prettier package
+lerna.json                          // lerna configuration
+package.json                        // common dev deps and workspace-wide scripts
+README.md                           // workspace-wide information. shown in github
+yarn.lock                           // the only lock file in the repo. all packages combined
 ```
 
 ### Scripts
@@ -177,16 +202,16 @@ Dependency structure:
 New `devDependencies` can be added to the root `package.json` using yarn:
 
 ```sh
-yarn add <package name> --dev -W
+$ yarn add <package name> --dev -W
 ```
 
 New `dependencies` can be added to the specific package using lerna scoped command:
 
 ```
-lerna add --scope @gifduck/worspace-name <package name>
+$ lerna add --scope @gifduck/worspace-name <package name>
 ```
 
-Packages depend on sibling packages within the monorepo. For example, in this repo, `@gifduck/client depends on`@gifcudk/babel-config`. This relationship is just a normal dependency, and can be described in the`package.json`of`app` like so:
+Packages depend on sibling packages within the monorepo. For example, in this repo, `@gifduck/client` depends on `@gifcudk/babel-config`. This relationship is just a normal dependency, and can be described in the`package.json` of `app` like so:
 
 ```json
 {
@@ -196,6 +221,40 @@ Packages depend on sibling packages within the monorepo. For example, in this re
   }
 }
 ```
+
+## Contribution
+
+The project uses [PR template](./.github/pull_request_template.md).
+Make sure all your tests pass (this part will be soon automated)
+Use Rebase strategy to keep your commit messages
+
+### Commits
+
+- The project uses [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) convention to keep our commit messages readable and clean.
+- commit linter will not let you make a commit which does not follow the pattern.
+- To learn more about it, please refer to [this](https://www.conventionalcommits.org/en/v1.0.0/#specification) link.
+- We also use [commit lint lerna scopes](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-lerna-scopes) to document the scope of your commit.
+
+Pattern:
+
+```
+type(scope?): subject           // scope is optional
+
+```
+
+package scope:
+
+```
+fix(server): send cors headers
+```
+
+project scope:
+
+```
+docs: update README contribution section
+```
+
+[TODO]
 
 ## Gifduck task manager
 
@@ -272,8 +331,9 @@ Packages depend on sibling packages within the monorepo. For example, in this re
   - let user decide which type of image he wants to search
   - goal: client can choose search between gifs and images
 
-### Things to do:
+### Issues:
 
+- [ ] [General] move this section to github issues
 - [ ] [General] setup jest to collect global coverage
 - [ ] [General] add Readme for each package
 - [ ] [General] make a common build pipeline for all packages using lerna scripts
