@@ -1,0 +1,33 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn test:client
+      - run: yarn test:server
+      - run: yarn run build:client
+      - run: yarn run build:server
+        env:
+          #          client
+          IMAGES_SEARCH_BAES_URL: ${secrets.IMAGES_SEARCH_BAES_URL}
+          #          server
+          PORT: ${secrets.PORT}
+          APP_ID: ${secret.APP_ID}
+          LOG_LEVEL: ${secret.LOG_LEVEL}
+          GIPHY_API_KEY: ${secret.GIPHY_API_KEY}
+          PIXABAY_API_KEY: ${secret.PIXABAY_API_KEY}
+          CI: true
