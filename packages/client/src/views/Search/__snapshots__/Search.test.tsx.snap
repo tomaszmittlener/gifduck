@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchResults renders correctly 1`] = `
+exports[`Views - Search renders correctly 1`] = `
 .c3 {
   font-size: 2.2806973457336426rem;
   font-family: Pacifico,sans-serif;
   color: #F2C94C;
   line-height: 2;
   width: auto;
-  -webkit-animation: dGzoaH 1s ease-out infinite;
-  animation: dGzoaH 1s ease-out infinite;
+  -webkit-animation: dGzoaH 1s ease-out none;
+  animation: dGzoaH 1s ease-out none;
 }
 
 .c1 {
@@ -69,7 +69,7 @@ exports[`SearchResults renders correctly 1`] = `
   justify-self: center;
 }
 
-.c11 {
+.c15 {
   margin: auto 0 0 0;
   width: 100%;
   min-height: 19.00260151070504rem;
@@ -89,10 +89,49 @@ exports[`SearchResults renders correctly 1`] = `
   padding: 1.423828125rem 0px;
 }
 
-.c12 {
+.c16 {
   color: #706155;
   font-family: Pacifico,sans-serif;
   font-size: 0.7901234567901234rem;
+}
+
+.c10 {
+  padding: 0;
+  display: grid;
+  grid-row-gap: 0.8888888888888888rem;
+  grid-column-gap: 1%;
+  grid-template-columns: 1fr;
+}
+
+.c12 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  grid-area: auto / 1 / span 2 / 5;
+}
+
+.c13 {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.c13:before {
+  display: block;
+  content: '';
+  width: 100%;
+  padding-top: 100%;
+}
+
+.c14 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 1100;
 }
 
 .c9 {
@@ -105,13 +144,8 @@ exports[`SearchResults renders correctly 1`] = `
   height: 100%;
 }
 
-.c10 {
-  grid-column: 3 / 7;
-  justify-self: center;
-  font-family: Open Sans,sans-serif;
-  color: #343339;
-  font-size: 3.247321025468409rem;
-  text-align: center;
+.c11 {
+  grid-column: 1 / 9;
 }
 
 .c0 {
@@ -171,6 +205,35 @@ exports[`SearchResults renders correctly 1`] = `
 }
 
 @media screen and (min-width:768px) {
+  .c10 {
+    grid-row-gap: 1.601806640625rem;
+    grid-template-columns: 6% 14% 11% 15% 5% 10% 9% 23%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c12:first-of-type {
+    grid-area: auto / 3 / span 1 / 7;
+  }
+
+  .c12:nth-of-type(2n) {
+    grid-area: auto / 4 / span 1 / 9;
+  }
+
+  .c12:nth-of-type(3n) {
+    grid-area: auto / 2 / span 1 / 7;
+  }
+
+  .c12:nth-of-type(4n) {
+    grid-area: auto / 5 / span 1 / 9;
+  }
+
+  .c12:nth-of-type(7n) {
+    grid-area: auto / 4 / span 1 / 6;
+  }
+}
+
+@media screen and (min-width:768px) {
   .c9 {
     padding: 0 1.423828125rem;
   }
@@ -226,18 +289,29 @@ exports[`SearchResults renders correctly 1`] = `
       <section
         class="c9"
       >
-        <h3
-          class="c10"
+        <ul
+          class="c10 c11"
         >
-          Type in whats on your mind!
-        </h3>
+          <li
+            class="c12"
+          >
+            <figure
+              class="c13"
+            >
+              <img
+                class="c14"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII="
+              />
+            </figure>
+          </li>
+        </ul>
       </section>
     </main>
     <footer
-      class="c11"
+      class="c15"
     >
       <span
-        class="c12"
+        class="c16"
       >
         @gifduck
       </span>

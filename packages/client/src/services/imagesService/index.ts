@@ -8,7 +8,7 @@ const instance = Axios.create({
   baseURL: BASE_URL + '/api/v1/images',
 })
 
-interface ImagesService {
+export interface ImagesService {
   getImages: (searchQuery: SearchQuery) => AxiosPromise<ImagesSearchResponse>
 }
 

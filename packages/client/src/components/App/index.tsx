@@ -4,14 +4,14 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import GlobalStyles from 'styles/GlobalStyles'
 import Theme from 'styles/theme'
-import HomePage from 'views/Home'
+import Search from 'views/Search'
 
 const App: FunctionComponent = () => {
   return (
     <Router>
       <ThemeProvider theme={Theme}>
         <GlobalStyles />
-        <HomePage />
+        <Search />
       </ThemeProvider>
     </Router>
   )
